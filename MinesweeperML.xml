@@ -1,0 +1,1402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MinesweeperML</name>
+    </assembly>
+    <members>
+        <member name="T:MinesweeperML.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.App.Mapper">
+            <summary>
+            Gets the mapper.
+            </summary>
+            <value>The mapper.</value>
+        </member>
+        <member name="M:MinesweeperML.App.OnExit(System.Windows.ExitEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:MinesweeperML.App.OnStartup(System.Windows.StartupEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Application.Startup" /> event.
+            </summary>
+            <param name="e">
+            A <see cref="T:System.Windows.StartupEventArgs" /> that contains the event
+            data.
+            </param>
+        </member>
+        <member name="M:MinesweeperML.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.Attributes.LocalizedDescriptionAttribute">
+            <summary>
+            Localized description attribute.
+            </summary>
+            <seealso cref="T:System.ComponentModel.DescriptionAttribute" />
+        </member>
+        <member name="P:MinesweeperML.Business.Attributes.LocalizedDescriptionAttribute.Description">
+            <summary>
+            Gets the description stored in this attribute.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Attributes.LocalizedDescriptionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Attributes.LocalizedDescriptionAttribute" />
+            class.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="T:MinesweeperML.Business.AutoMapper.AutoMapperConfiguration">
+            <summary>
+            The auto mapper configuration helper class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.AutoMapper.AutoMapperConfiguration.Configure">
+            <summary>
+            Configures this instance.
+            </summary>
+            <returns>The mapper configuration.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.AutoMapper.Profiles.HighscoreProfile">
+            <summary>
+            The highscore profile to map between <see cref="T:MinesweeperML.Models.Highscore" /> and <see
+            cref="T:MinesweeperML.ViewsModel.HighscoresViewModel" />.
+            </summary>
+            <seealso cref="T:AutoMapper.Profile" />
+        </member>
+        <member name="M:MinesweeperML.Business.AutoMapper.Profiles.HighscoreProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.AutoMapper.Profiles.HighscoreProfile" /> class.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.Commands.AsyncCommand">
+            <summary>
+            Implements asynchronous command.
+            </summary>
+            <seealso cref="T:MinesweeperML.Business.Interfaces.IAsyncCommand" />
+        </member>
+        <member name="E:MinesweeperML.Business.Commands.AsyncCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should
+            execute.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Func{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.AsyncCommand" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand.CanExecute">
+            <summary>
+            Determines whether this instance can execute.
+            </summary>
+            <returns>
+            <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand.ExecuteAsync">
+            <summary>
+            Executes the asynchronous.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand.RaiseCanExecuteChanged">
+            <summary>
+            Raises the can execute changed.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.Commands.AsyncCommand`1">
+            <summary>
+            Implements aysnchronous command.
+            </summary>
+            <typeparam name="T">T.</typeparam>
+            <seealso cref="T:MinesweeperML.Business.Interfaces.IAsyncCommand`1" />
+        </member>
+        <member name="E:MinesweeperML.Business.Commands.AsyncCommand`1.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should
+            execute.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand`1.#ctor(System.Func{`0,System.Threading.Tasks.Task},System.Func{`0,System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.AsyncCommand`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand`1.CanExecute(`0)">
+            <summary>
+            Determines whether this instance can execute the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+            <c>true</c> if this instance can execute the specified parameter; otherwise,
+            <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand`1.ExecuteAsync(`0)">
+            <summary>
+            Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.AsyncCommand`1.RaiseCanExecuteChanged">
+            <summary>
+            Raises the can execute changed.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.Commands.RelayCommand">
+            <summary>
+            Relay command.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="E:MinesweeperML.Business.Commands.RelayCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should
+            execute.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand.#ctor(System.Action{System.Object},System.Predicate{System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.RelayCommand" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <exception cref="T:System.NullReferenceException">execute.</exception>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand.#ctor(System.Action{System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.RelayCommand" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its
+            current state.
+            </summary>
+            <param name="parameter">
+            Data used by the command. If the command does not require data to be passed,
+            this object can be set to <see langword="null" />.
+            </param>
+            <returns>
+            <see langword="true" /> if this command can be executed; otherwise, <see
+            langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">
+            Data used by the command. If the command does not require data to be passed,
+            this object can be set to <see langword="null" />.
+            </param>
+        </member>
+        <member name="T:MinesweeperML.Business.Commands.RelayCommand`1">
+            <summary>
+            The relay command of type T..
+            </summary>
+            <typeparam name="T">T.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="E:MinesweeperML.Business.Commands.RelayCommand`1.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should
+            execute.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand`1.#ctor(System.Action{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.RelayCommand`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand`1.#ctor(System.Action{`0},System.Predicate{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Commands.RelayCommand`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <exception cref="T:System.ArgumentNullException">execute.</exception>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand`1.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its
+            current state.
+            </summary>
+            <param name="parameter">
+            Data used by the command. If the command does not require data to be passed,
+            this object can be set to <see langword="null" />.
+            </param>
+            <returns>
+            <see langword="true" /> if this command can be executed; otherwise, <see
+            langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Commands.RelayCommand`1.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">
+            Data used by the command. If the command does not require data to be passed,
+            this object can be set to <see langword="null" />.
+            </param>
+        </member>
+        <member name="T:MinesweeperML.Business.ConfigurationBuilderHelper">
+            <summary>
+            The configuration builder helper class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.ConfigurationBuilderHelper.GetConfiguration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <returns>The configuration <see cref="T:Microsoft.Extensions.Configuration.IConfigurationRoot" />.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Constants.StringConstants">
+            <summary>
+            The constant strings.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Business.Constants.StringConstants.MinesweeperDbConnectionString">
+            <summary>
+            The minesweeper database connection string.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Business.Constants.StringConstants.MinesweeperDbPath">
+            <summary>
+            The minesweeper database path.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.BombCounterToNumberConverter">
+            <summary>
+            Bomb counter to number converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BombCounterToNumberConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BombCounterToNumberConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.BombToColorConverter">
+            <summary>
+            Bomb to color converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BombToColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BombToColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.EnumToDescriptionConverter">
+            <summary>
+            Convert enum to string using its localized description attribute.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.EnumToDescriptionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.EnumToDescriptionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+            <exception cref="T:System.NotImplementedException">value.</exception>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.GameWonConverter">
+            <summary>
+            Game won converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.GameWonConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.GameWonConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+            <exception cref="T:System.NotImplementedException">Should never be called.</exception>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.MarkConverter">
+            <summary>
+            Mark converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.MarkConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.MarkConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+            <exception cref="T:System.NotImplementedException">Should never be called.</exception>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.ModeConverter">
+            <summary>
+            Mode converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.ModeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.ModeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+            <exception cref="T:System.NotImplementedException">Should never be called.</exception>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.StopwatchConverter">
+            <summary>
+            Stopwatch converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.StopwatchConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.StopwatchConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+            <exception cref="T:System.NotImplementedException">Should never be called.</exception>
+        </member>
+        <member name="T:MinesweeperML.Business.Converter.VisibilityToOpacityConverter">
+            <summary>
+            Visiblity to opacity converter.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.VisibilityToOpacityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.VisibilityToOpacityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext">
+            <summary>
+            The minesweeper database context.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="P:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext.HighScores">
+            <summary>
+            Gets or sets the high scores.
+            </summary>
+            <value>The high scores.</value>
+        </member>
+        <member name="M:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext" /> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="T:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory">
+            <summary>
+            Provides a factory to access the minesweeper database.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1" />
+        </member>
+        <member name="M:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory.CreateDbContext">
+            <summary>
+            Creates the database context.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory.CreateDbContext(System.String[])">
+            <summary>
+            Creates a new instance of a derived context.
+            </summary>
+            <param name="args">Arguments provided by the design-time service.</param>
+            <returns>An instance of <typeparamref name="MinesweeperDbContext" />.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Database.DbCreator">
+            <summary>
+            Helper to create the database file.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Database.DbCreator.CreateAsync">
+            <summary>
+            Creates the asynchronous.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Business.ErrorHandler">
+            <summary>
+            Handles errors.
+            </summary>
+            <seealso cref="T:MinesweeperML.Business.Interfaces.IErrorHandler" />
+        </member>
+        <member name="M:MinesweeperML.Business.ErrorHandler.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns>This instance.</returns>
+        </member>
+        <member name="M:MinesweeperML.Business.ErrorHandler.HandleError(System.Exception)">
+            <summary>
+            Handles the error.
+            </summary>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="T:MinesweeperML.Business.Extensions.EnumExtensions">
+            <summary>
+            Extensions for enumerations.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Extensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            Gets the description.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>Description or null.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Extensions.TaskExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Threading.Tasks.Task"></see>.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Extensions.TaskExtensions.FireAndForgetSafety(System.Threading.Tasks.Task,MinesweeperML.Business.Interfaces.IErrorHandler)">
+            <summary>
+            Fires the and forget safety.
+            </summary>
+            <param name="task">The task.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="T:MinesweeperML.Business.Interfaces.IAsyncCommand">
+            <summary>
+            Defines the asynchronous command.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:MinesweeperML.Business.Interfaces.IAsyncCommand.CanExecute">
+            <summary>
+            Determines whether this instance can execute.
+            </summary>
+            <returns>
+            <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Interfaces.IAsyncCommand.ExecuteAsync">
+            <summary>
+            Executes the asynchronous.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Interfaces.IAsyncCommand`1">
+            <summary>
+            Defines the asynchronous command.
+            </summary>
+            <typeparam name="T">T.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:MinesweeperML.Business.Interfaces.IAsyncCommand`1.CanExecute(`0)">
+            <summary>
+            Determines whether this instance can execute the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+            <c>true</c> if this instance can execute the specified parameter; otherwise,
+            <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Interfaces.IAsyncCommand`1.ExecuteAsync(`0)">
+            <summary>
+            Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The task that is executed async.</returns>
+        </member>
+        <member name="T:MinesweeperML.Business.Interfaces.IErrorHandler">
+            <summary>
+            Defines the ErrorHandler.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.Interfaces.IErrorHandler.HandleError(System.Exception)">
+            <summary>
+            Handles the error.
+            </summary>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="T:MinesweeperML.Cultures.CultureResources">
+            <summary>
+            Wraps up XAML access to instance of WPFLocalize.Properties.Resources, list of
+            available cultures, and method to change culture.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.CultureResources.ResourceProvider">
+            <summary>
+            Gets the resource provider.
+            </summary>
+            <value>The resource provider.</value>
+        </member>
+        <member name="P:MinesweeperML.Cultures.CultureResources.SupportedCultures">
+            <summary>
+            Gets list of available cultures, enumerated at startup.
+            </summary>
+            <value>The supported cultures.</value>
+        </member>
+        <member name="M:MinesweeperML.Cultures.CultureResources.SetCulture(System.Globalization.CultureInfo)">
+            <summary>
+            Change the current culture used in the application. If the desired culture is
+            available all localized elements are updated.
+            </summary>
+            <param name="culture">Culture to change to.</param>
+        </member>
+        <member name="M:MinesweeperML.Cultures.CultureResources.GetResourceInstance">
+            <summary>
+            The Resources ObjectDataProvider uses this method to get an instance of the
+            WPFLocalize.Properties.Resources class.
+            </summary>
+            <returns>New resource.</returns>
+        </member>
+        <member name="T:MinesweeperML.Cultures.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Custom">
+            <summary>
+              Looks up a localized string similar to Custom.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Difficulty">
+            <summary>
+              Looks up a localized string similar to DIfficulty.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Easy">
+            <summary>
+              Looks up a localized string similar to Easy.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Fehler">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Hard">
+            <summary>
+              Looks up a localized string similar to Hard.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Medium">
+            <summary>
+              Looks up a localized string similar to Medium.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.MessageUnexpectedError">
+            <summary>
+              Looks up a localized string similar to An unexpected error occured..
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Rank">
+            <summary>
+              Looks up a localized string similar to Rank.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Cultures.Resources.Time">
+            <summary>
+              Looks up a localized string similar to Time.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Enumerations.ClickMode">
+            <summary>
+            Click mode.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.ClickMode.Reveal">
+            <summary>
+            The reveal.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.ClickMode.Mark">
+            <summary>
+            The mark.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Enumerations.Difficulty">
+            <summary>
+            Difficulty.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Difficulty.Easy">
+            <summary>
+            The easy.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Difficulty.Medium">
+            <summary>
+            The medium.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Difficulty.Hard">
+            <summary>
+            The hard.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Difficulty.Custom">
+            <summary>
+            The custom.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Models.Highscore">
+            <summary>
+            Highscore.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Models.Highscore.Difficulty">
+            <summary>
+            Gets or sets the difficulty.
+            </summary>
+            <value>The difficulty.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.Highscore.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.Highscore.Time">
+            <summary>
+            Gets or sets the time.
+            </summary>
+            <value>The time.</value>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.BaseViewModel">
+            <summary>
+            Base class for view model.
+            </summary>
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+        </member>
+        <member name="E:MinesweeperML.ViewsModel.BaseViewModel.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.BaseViewModel.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notifies the property changed.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.CustomGameViewModel">
+            <summary>
+            Custom game view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Bombs">
+            <summary>
+            Gets or sets the bombs.
+            </summary>
+            <value>The bombs.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Columns">
+            <summary>
+            Gets or sets the columns.
+            </summary>
+            <value>The columns.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MainMenuViewModel">
+            <summary>
+            Gets or sets the main menu view model.
+            </summary>
+            <value>The main menu view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MaxBombs">
+            <summary>
+            Gets the maximum bombs.
+            </summary>
+            <value>The maximum bombs.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MinesweeperViewModel">
+            <summary>
+            Gets or sets the minesweeper view model.
+            </summary>
+            <value>The minesweeper view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Rows">
+            <summary>
+            Gets or sets the rows.
+            </summary>
+            <value>The rows.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.StartGameCommand">
+            <summary>
+            Gets the start game command.
+            </summary>
+            <value>The start game command.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.CustomGameViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.CustomGameViewModel" /> class.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.GameWonDialogViewModel">
+            <summary>
+            Game won dialog view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.GameWonDialogViewModel.WinningTime">
+            <summary>
+            Gets or sets the time.
+            </summary>
+            <value>The time.</value>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.HighscoresViewModel">
+            <summary>
+            Highscores view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="F:MinesweeperML.ViewsModel.HighscoresViewModel.SortingDirection">
+            <summary>
+            The sorting direction.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.Difficulties">
+            <summary>
+            Gets the difficulties.
+            </summary>
+            <value>The difficulties.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.CurrentPage">
+            <summary>
+            Gets or sets the current page.
+            </summary>
+            <value>The current page.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.HighscoresView">
+            <summary>
+            Gets the highscores view.
+            </summary>
+            <value>The highscores view.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.HighscoresViewSource">
+            <summary>
+            Gets or sets the highscores view source.
+            </summary>
+            <value>The highscores view source.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.MainWindowViewModel">
+            <summary>
+            Gets or sets the main window view model.
+            </summary>
+            <value>The main window view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.MaxPage">
+            <summary>
+            Gets or sets the maximum page.
+            </summary>
+            <value>The maximum page.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToFirstPageCommand">
+            <summary>
+            Gets the skip to first page command.
+            </summary>
+            <value>The skip to first page command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToLastPageCommand">
+            <summary>
+            Gets the skip to last page command.
+            </summary>
+            <value>The skip to last page command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToNextPageCommand">
+            <summary>
+            Gets the skip to next page command.
+            </summary>
+            <value>The skip to next page command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToPreviousPageCommand">
+            <summary>
+            Gets the skip to previous page command.
+            </summary>
+            <value>The skip to previous page command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SortingCommand">
+            <summary>
+            Gets the sorting command.
+            </summary>
+            <value>The sorting command.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.#ctor(MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.HighscoresViewModel" /> class.
+            </summary>
+            <param name="minesweeperDbContextFactory">
+            The minesweeper database context factory.
+            </param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToLastPage">
+            <summary>
+            Skips to last page.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToNextPage">
+            <summary>
+            Skips to next page.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.HighscoreViewModel">
+            <summary>
+            The highscore view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Difficulty">
+            <summary>
+            Gets or sets the difficulty.
+            </summary>
+            <value>The difficulty.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Rank">
+            <summary>
+            Gets or sets the rank.
+            </summary>
+            <value>The rank.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Time">
+            <summary>
+            Gets or sets the time.
+            </summary>
+            <value>The time.</value>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.MainMenuViewModel">
+            <summary>
+            Main menu view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.ShowHighscoresCommand">
+            <summary>
+            Gets the show highscores command.
+            </summary>
+            <value>The show highscores command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartCustomGameCommand">
+            <summary>
+            Gets the start customer game command.
+            </summary>
+            <value>The start customer game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartEasyGameCommand">
+            <summary>
+            Gets the start easy game command.
+            </summary>
+            <value>The start easy game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartHardGameCommand">
+            <summary>
+            Gets the start hard game command.
+            </summary>
+            <value>The start hard game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartMediumGameCommand">
+            <summary>
+            Gets the start medium game command.
+            </summary>
+            <value>The start medium game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartWindowViewModel">
+            <summary>
+            Gets or sets the start window view model.
+            </summary>
+            <value>The start window view model.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.MainMenuViewModel.#ctor(MinesweeperML.ViewsModel.HighscoresViewModel,MinesweeperML.ViewsModel.CustomGameViewModel,MinesweeperML.ViewsModel.MinesweeperViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.MainMenuViewModel" /> class.
+            </summary>
+            <param name="highscoresViewModel">The highscores view model.</param>
+            <param name="customGameViewModel">The custom game view model.</param>
+            <param name="minesweeperViewModel">The minesweeper view model.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.MinesweeperViewModel">
+            <summary>
+            Minesweeper viewmodel.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.ChangeModeCommand">
+            <summary>
+            Gets the change mode command.
+            </summary>
+            <value>The change mode command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.CurrentMode">
+            <summary>
+            Gets or sets the current mode.
+            </summary>
+            <value>The current mode.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.GameWon">
+            <summary>
+            Gets or sets the game won.
+            </summary>
+            <value>The game won.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.MainMenuViewModel">
+            <summary>
+            Gets or sets the main menu view model.
+            </summary>
+            <value>The main menu view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.RemainingBombs">
+            <summary>
+            Gets or sets the remaining bombs.
+            </summary>
+            <value>The remaining bombs.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.StartNewGameCommand">
+            <summary>
+            Gets the start new game command.
+            </summary>
+            <value>The start new game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.TileClickedCommand">
+            <summary>
+            Gets the tile clicked command.
+            </summary>
+            <value>The tile clicked command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.TileRightClickedCommand">
+            <summary>
+            Gets the tile right clicked command.
+            </summary>
+            <value>The tile right clicked command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.Tiles">
+            <summary>
+            Gets or sets the tiles.
+            </summary>
+            <value>The tiles.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.Time">
+            <summary>
+            Gets or sets the time.
+            </summary>
+            <value>The time.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.MinesweeperViewModel.#ctor(AutoMapper.IMapper,MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.MinesweeperViewModel" /> class.
+            </summary>
+            <param name="mapper">The mapper.</param>
+            <param name="minesweeperDbContextFactory">
+            The minesweeper database context factory.
+            </param>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.MinesweeperViewModel.StartGame(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
+            <summary>
+            Starts the game.
+            </summary>
+            <param name="columns">The columns.</param>
+            <param name="rows">The rows.</param>
+            <param name="numberOfBombs">The number of bombs.</param>
+            <param name="difficulty">The difficulty.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.StartWindowViewModel">
+            <summary>
+            Start window view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.StartWindowViewModel.SelectedViewModel">
+            <summary>
+            Gets or sets the selected view model.
+            </summary>
+            <value>The selected view model.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewsModel.StartWindowViewModel.#ctor(MinesweeperML.ViewsModel.MainMenuViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.StartWindowViewModel" /> class.
+            </summary>
+            <param name="mainMenuViewModel">The main menu view model.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewsModel.TileViewModel">
+            <summary>
+            The view model representing a tile on the game board.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.TileViewModel.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsBomb">
+            <summary>
+            Gets or sets a value indicating whether this instance is bomb.
+            </summary>
+            <value><c>true</c> if this instance is bomb; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsClickable">
+            <summary>
+            Gets or sets a value indicating whether this instance is visible.
+            </summary>
+            <value>
+            <c>true</c> if this instance is visible; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsMarked">
+            <summary>
+            Gets or sets a value indicating whether this instance is marked.
+            </summary>
+            <value><c>true</c> if this instance is marked; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewsModel.TileViewModel.SurroundingBombs">
+            <summary>
+            Gets or sets the surrounding bombs.
+            </summary>
+            <value>The surrounding bombs.</value>
+        </member>
+        <member name="T:MinesweeperML.Views.CustomGameSettings">
+            <summary>
+            Interaction logic for CustomGameSettings.xaml.
+            </summary>
+            <summary>
+            CustomGameSettings
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.CustomGameSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.CustomGameSettings" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.CustomGameSettings.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.GameWonDialog">
+            <summary>
+            Interaction logic for GameWonDialog.xaml.
+            </summary>
+            <summary>
+            GameWonDialog
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.GameWonDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.GameWonDialog" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.GameWonDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.HighscoresView">
+            <summary>
+            Interaction logic for HighscoresView.xaml.
+            </summary>
+            <summary>
+            HighscoresView
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.HighscoresView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.HighscoresView" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.HighscoresView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.MainMenu">
+            <summary>
+            Interaction logic for MainMenu.xaml.
+            </summary>
+            <summary>
+            MainMenu
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MainMenu.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.MainMenu" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MainMenu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.MinesweeperWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MinesweeperWindow
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MinesweeperWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.MinesweeperWindow" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MinesweeperWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.StartWindow">
+            <summary>
+            Interaction logic for StartWindow.xaml.
+            </summary>
+            <summary>
+            StartWindow
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.StartWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.StartWindow" /> class.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.StartWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

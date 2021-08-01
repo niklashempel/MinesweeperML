@@ -1,0 +1,99 @@
+﻿<UserControl
+    x:Class="MinesweeperML.Views.HighscoresView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:MinesweeperML.Business.Converter"
+    xmlns:local="clr-namespace:MinesweeperML.Views"
+    mc:Ignorable="d"
+    Height="550"
+    Width="500">
+    <UserControl.Resources>
+        <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Button
+            ToolTip="Go back"
+            HorizontalAlignment="Left"
+            Command="{Binding GoBackCommand}"
+            Style="{DynamicResource MaterialDesignFlatButton}">
+            <materialDesign:PackIcon Kind="LessThan" />
+        </Button>
+        <TextBlock
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="Highscores"
+            FontSize="20" />
+        <DataGrid
+            Margin="0 0 0 0"
+            Grid.Row="2"
+            ItemsSource="{Binding HighscoresView}"
+            IsReadOnly="True"
+            CanUserSortColumns="True"
+            AutoGenerateColumns="False"
+            CanUserResizeColumns="False"
+            Sorting="DataGrid_Sorting">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="{Binding Path=Rank, Source={StaticResource Resources}}"
+                    Binding="{Binding Difficulty}"
+                    Width="100" />
+                <DataGridTextColumn
+                    Header="{Binding Path=Time, Source={StaticResource Resources}}"
+                    Binding="{Binding Time, StringFormat={}{0:mm}:{0:ss}.{0:ff}}"
+                    Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- Skip pages -->
+        <StackPanel
+            Margin="0 0 0 10"
+            Grid.Row="3"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.ColumnSpan="2">
+            <Button
+                Content="{materialDesign:PackIcon Kind=PageFirst}"
+                ToolTip="Skip to first page."
+                Width="45"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding SkipToFirstPageCommand}">
+            </Button>
+            <Button
+                Content="{materialDesign:PackIcon Kind=ChevronLeft}"
+                ToolTip="Skip to previous page."
+                Width="45"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding SkipToPreviousPageCommand}">
+            </Button>
+            <TextBlock VerticalAlignment="Center" Margin="10 0 10 0">
+                <Run Text="{Binding CurrentPage}" />
+                <Run Text="/" />
+                <Run Text="{Binding MaxPage}" />
+            </TextBlock>
+
+            <Button
+                Content="{materialDesign:PackIcon Kind=ChevronRight}"
+                ToolTip="Skip to next page."
+                Width="45"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding SkipToNextPageCommand}">
+            </Button>
+            <Button
+                Content="{materialDesign:PackIcon Kind=PageLast}"
+                ToolTip="Skip to last page."
+                Width="45"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding SkipToLastPageCommand}" />
+        </StackPanel>
+    </Grid>
+</UserControl>
