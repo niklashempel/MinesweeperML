@@ -13,7 +13,7 @@ using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
 using MinesweeperML.Models;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Highscores view model.

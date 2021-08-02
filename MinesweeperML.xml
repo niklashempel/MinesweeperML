@@ -72,7 +72,7 @@
         <member name="T:MinesweeperML.Business.AutoMapper.Profiles.HighscoreProfile">
             <summary>
             The highscore profile to map between <see cref="T:MinesweeperML.Models.Highscore" /> and <see
-            cref="T:MinesweeperML.ViewsModel.HighscoresViewModel" />.
+            cref="T:MinesweeperML.ViewModels.HighscoresViewModel" />.
             </summary>
             <seealso cref="T:AutoMapper.Profile" />
         </member>
@@ -844,358 +844,369 @@
             </summary>
             <value>The time.</value>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.BaseViewModel">
+        <member name="T:MinesweeperML.ViewModels.BaseViewModel">
             <summary>
             Base class for view model.
             </summary>
             <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
         </member>
-        <member name="E:MinesweeperML.ViewsModel.BaseViewModel.PropertyChanged">
+        <member name="E:MinesweeperML.ViewModels.BaseViewModel.PropertyChanged">
             <summary>
             Occurs when a property value changes.
             </summary>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.BaseViewModel.NotifyPropertyChanged(System.String)">
+        <member name="M:MinesweeperML.ViewModels.BaseViewModel.NotifyPropertyChanged(System.String)">
             <summary>
             Notifies the property changed.
             </summary>
             <param name="propertyName">Name of the property.</param>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.CustomGameViewModel">
+        <member name="T:MinesweeperML.ViewModels.CustomGameViewModel">
             <summary>
             Custom game view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Bombs">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.Bombs">
             <summary>
             Gets or sets the bombs.
             </summary>
             <value>The bombs.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Columns">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.Columns">
             <summary>
             Gets or sets the columns.
             </summary>
             <value>The columns.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.GoBackCommand">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.GoBackCommand">
             <summary>
             Gets the go back command.
             </summary>
             <value>The go back command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MainMenuViewModel">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.MainMenuViewModel">
             <summary>
             Gets or sets the main menu view model.
             </summary>
             <value>The main menu view model.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MaxBombs">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.MaxBombs">
             <summary>
             Gets the maximum bombs.
             </summary>
             <value>The maximum bombs.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.MinesweeperViewModel">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.MinesweeperViewModel">
             <summary>
             Gets or sets the minesweeper view model.
             </summary>
             <value>The minesweeper view model.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.Rows">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.Rows">
             <summary>
             Gets or sets the rows.
             </summary>
             <value>The rows.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.CustomGameViewModel.StartGameCommand">
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.SelectNewGameViewModel">
+            <summary>
+            Gets or sets the select new game view model.
+            </summary>
+            <value>The select new game view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.CustomGameViewModel.StartGameCommand">
             <summary>
             Gets the start game command.
             </summary>
             <value>The start game command.</value>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.CustomGameViewModel.#ctor">
+        <member name="M:MinesweeperML.ViewModels.CustomGameViewModel.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.CustomGameViewModel" /> class.
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.CustomGameViewModel" /> class.
             </summary>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.GameWonDialogViewModel">
+        <member name="T:MinesweeperML.ViewModels.GameWonDialogViewModel">
             <summary>
             Game won dialog view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.GameWonDialogViewModel.WinningTime">
+        <member name="P:MinesweeperML.ViewModels.GameWonDialogViewModel.WinningTime">
             <summary>
             Gets or sets the time.
             </summary>
             <value>The time.</value>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.HighscoresViewModel">
+        <member name="T:MinesweeperML.ViewModels.HighscoresViewModel">
             <summary>
             Highscores view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="F:MinesweeperML.ViewsModel.HighscoresViewModel.SortingDirection">
+        <member name="F:MinesweeperML.ViewModels.HighscoresViewModel.SortingDirection">
             <summary>
             The sorting direction.
             </summary>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.Difficulties">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.Difficulties">
             <summary>
             Gets the difficulties.
             </summary>
             <value>The difficulties.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.CurrentPage">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.CurrentPage">
             <summary>
             Gets or sets the current page.
             </summary>
             <value>The current page.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.GoBackCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.GoBackCommand">
             <summary>
             Gets the go back command.
             </summary>
             <value>The go back command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.HighscoresView">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.HighscoresView">
             <summary>
             Gets the highscores view.
             </summary>
             <value>The highscores view.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.HighscoresViewSource">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.HighscoresViewSource">
             <summary>
             Gets or sets the highscores view source.
             </summary>
             <value>The highscores view source.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.MainWindowViewModel">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.MainWindowViewModel">
             <summary>
             Gets or sets the main window view model.
             </summary>
             <value>The main window view model.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.MaxPage">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.MaxPage">
             <summary>
             Gets or sets the maximum page.
             </summary>
             <value>The maximum page.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToFirstPageCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.SkipToFirstPageCommand">
             <summary>
             Gets the skip to first page command.
             </summary>
             <value>The skip to first page command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToLastPageCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.SkipToLastPageCommand">
             <summary>
             Gets the skip to last page command.
             </summary>
             <value>The skip to last page command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToNextPageCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.SkipToNextPageCommand">
             <summary>
             Gets the skip to next page command.
             </summary>
             <value>The skip to next page command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToPreviousPageCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.SkipToPreviousPageCommand">
             <summary>
             Gets the skip to previous page command.
             </summary>
             <value>The skip to previous page command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoresViewModel.SortingCommand">
+        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.SortingCommand">
             <summary>
             Gets the sorting command.
             </summary>
             <value>The sorting command.</value>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.#ctor(MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory,AutoMapper.IMapper)">
+        <member name="M:MinesweeperML.ViewModels.HighscoresViewModel.#ctor(MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory,AutoMapper.IMapper)">
             <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.HighscoresViewModel" /> class.
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.HighscoresViewModel" /> class.
             </summary>
             <param name="minesweeperDbContextFactory">
             The minesweeper database context factory.
             </param>
             <param name="mapper">The mapper.</param>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToLastPage">
+        <member name="M:MinesweeperML.ViewModels.HighscoresViewModel.SkipToLastPage">
             <summary>
             Skips to last page.
             </summary>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.HighscoresViewModel.SkipToNextPage">
+        <member name="M:MinesweeperML.ViewModels.HighscoresViewModel.SkipToNextPage">
             <summary>
             Skips to next page.
             </summary>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.HighscoreViewModel">
+        <member name="T:MinesweeperML.ViewModels.HighscoreViewModel">
             <summary>
             The highscore view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Difficulty">
+        <member name="P:MinesweeperML.ViewModels.HighscoreViewModel.Difficulty">
             <summary>
             Gets or sets the difficulty.
             </summary>
             <value>The difficulty.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.ID">
+        <member name="P:MinesweeperML.ViewModels.HighscoreViewModel.ID">
             <summary>
             Gets or sets the identifier.
             </summary>
             <value>The identifier.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Rank">
+        <member name="P:MinesweeperML.ViewModels.HighscoreViewModel.Rank">
             <summary>
             Gets or sets the rank.
             </summary>
             <value>The rank.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.HighscoreViewModel.Time">
+        <member name="P:MinesweeperML.ViewModels.HighscoreViewModel.Time">
             <summary>
             Gets or sets the time.
             </summary>
             <value>The time.</value>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.MainMenuViewModel">
+        <member name="T:MinesweeperML.ViewModels.MainMenuViewModel">
             <summary>
             Main menu view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.ShowHighscoresCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowHighscoresCommand">
             <summary>
             Gets the show highscores command.
             </summary>
             <value>The show highscores command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartCustomGameCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartCustomGameCommand">
             <summary>
             Gets the start customer game command.
             </summary>
             <value>The start customer game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartEasyGameCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartEasyGameCommand">
             <summary>
             Gets the start easy game command.
             </summary>
             <value>The start easy game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartHardGameCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartHardGameCommand">
             <summary>
             Gets the start hard game command.
             </summary>
             <value>The start hard game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartMediumGameCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartMediumGameCommand">
             <summary>
             Gets the start medium game command.
             </summary>
             <value>The start medium game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.StartWindowViewModel">
-            <summary>
-            Gets or sets the start window view model.
-            </summary>
-            <value>The start window view model.</value>
-        </member>
-        <member name="M:MinesweeperML.ViewsModel.MainMenuViewModel.#ctor(MinesweeperML.ViewsModel.HighscoresViewModel,MinesweeperML.ViewsModel.CustomGameViewModel,MinesweeperML.ViewsModel.MinesweeperViewModel)">
-            <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.MainMenuViewModel" /> class.
-            </summary>
-            <param name="highscoresViewModel">The highscores view model.</param>
-            <param name="customGameViewModel">The custom game view model.</param>
-            <param name="minesweeperViewModel">The minesweeper view model.</param>
-        </member>
-        <member name="T:MinesweeperML.ViewsModel.MinesweeperViewModel">
-            <summary>
-            Minesweeper viewmodel.
-            </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.ChangeModeCommand">
-            <summary>
-            Gets the change mode command.
-            </summary>
-            <value>The change mode command.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.CurrentMode">
-            <summary>
-            Gets or sets the current mode.
-            </summary>
-            <value>The current mode.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.GameWon">
-            <summary>
-            Gets or sets the game won.
-            </summary>
-            <value>The game won.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.GoBackCommand">
-            <summary>
-            Gets the go back command.
-            </summary>
-            <value>The go back command.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.MainMenuViewModel">
-            <summary>
-            Gets or sets the main menu view model.
-            </summary>
-            <value>The main menu view model.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.RemainingBombs">
-            <summary>
-            Gets or sets the remaining bombs.
-            </summary>
-            <value>The remaining bombs.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.StartNewGameCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartNewGameCommand">
             <summary>
             Gets the start new game command.
             </summary>
             <value>The start new game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.TileClickedCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartWindowViewModel">
+            <summary>
+            Gets or sets the start window view model.
+            </summary>
+            <value>The start window view model.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MainMenuViewModel" /> class.
+            </summary>
+            <param name="highscoresViewModel">The highscores view model.</param>
+            <param name="selectNewGameViewModel">The select new game view model.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewModels.MinesweeperViewModel">
+            <summary>
+            Minesweeper viewmodel.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.ChangeModeCommand">
+            <summary>
+            Gets the change mode command.
+            </summary>
+            <value>The change mode command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.CurrentMode">
+            <summary>
+            Gets or sets the current mode.
+            </summary>
+            <value>The current mode.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.GameWon">
+            <summary>
+            Gets or sets the game won.
+            </summary>
+            <value>The game won.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.MainMenuViewModel">
+            <summary>
+            Gets or sets the main menu view model.
+            </summary>
+            <value>The main menu view model.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.RemainingBombs">
+            <summary>
+            Gets or sets the remaining bombs.
+            </summary>
+            <value>The remaining bombs.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.StartNewGameCommand">
+            <summary>
+            Gets the start new game command.
+            </summary>
+            <value>The start new game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.TileClickedCommand">
             <summary>
             Gets the tile clicked command.
             </summary>
             <value>The tile clicked command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.TileRightClickedCommand">
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.TileRightClickedCommand">
             <summary>
             Gets the tile right clicked command.
             </summary>
             <value>The tile right clicked command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.Tiles">
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.Tiles">
             <summary>
             Gets or sets the tiles.
             </summary>
             <value>The tiles.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.MinesweeperViewModel.Time">
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.Time">
             <summary>
             Gets or sets the time.
             </summary>
             <value>The time.</value>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.MinesweeperViewModel.#ctor(AutoMapper.IMapper,MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory)">
+        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.#ctor(AutoMapper.IMapper,MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory)">
             <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.MinesweeperViewModel" /> class.
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MinesweeperViewModel" /> class.
             </summary>
             <param name="mapper">The mapper.</param>
             <param name="minesweeperDbContextFactory">
             The minesweeper database context factory.
             </param>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.MinesweeperViewModel.StartGame(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
+        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.StartGame(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
             <summary>
             Starts the game.
             </summary>
@@ -1204,43 +1215,99 @@
             <param name="numberOfBombs">The number of bombs.</param>
             <param name="difficulty">The difficulty.</param>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.StartWindowViewModel">
+        <member name="T:MinesweeperML.ViewModels.SelectNewGameViewModel">
+            <summary>
+            View model to select a new game.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartCustomGameCommand">
+            <summary>
+            Gets the start custom game command.
+            </summary>
+            <value>The start custom game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartEasyGameCommand">
+            <summary>
+            Gets the start easy game command.
+            </summary>
+            <value>The start easy game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartHardGameCommand">
+            <summary>
+            Gets the start hard game command.
+            </summary>
+            <value>The start hard game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartMediumGameCommand">
+            <summary>
+            Gets the start medium game command.
+            </summary>
+            <value>The start medium game command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartWindowViewModel">
+            <summary>
+            Gets or sets the start window view model.
+            </summary>
+            <value>The start window view model.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.#ctor(MinesweeperML.ViewModels.CustomGameViewModel,MinesweeperML.ViewModels.MinesweeperViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.SelectNewGameViewModel" /> class.
+            </summary>
+            <param name="customGameViewModel">The custom game view model.</param>
+            <param name="minesweeperViewModel">The minesweeper view model.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.SetNavigationViewModels(MinesweeperML.ViewModels.MainMenuViewModel,MinesweeperML.ViewModels.StartWindowViewModel)">
+            <summary>
+            Sets the navigation view models.
+            </summary>
+            <param name="mainMenuViewModel">The main menu view model.</param>
+            <param name="startWindowViewModel">The start window view model.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewModels.StartWindowViewModel">
             <summary>
             Start window view model.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.StartWindowViewModel.SelectedViewModel">
+        <member name="P:MinesweeperML.ViewModels.StartWindowViewModel.SelectedViewModel">
             <summary>
             Gets or sets the selected view model.
             </summary>
             <value>The selected view model.</value>
         </member>
-        <member name="M:MinesweeperML.ViewsModel.StartWindowViewModel.#ctor(MinesweeperML.ViewsModel.MainMenuViewModel)">
+        <member name="M:MinesweeperML.ViewModels.StartWindowViewModel.#ctor(MinesweeperML.ViewModels.MainMenuViewModel)">
             <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.StartWindowViewModel" /> class.
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.StartWindowViewModel" /> class.
             </summary>
             <param name="mainMenuViewModel">The main menu view model.</param>
         </member>
-        <member name="T:MinesweeperML.ViewsModel.TileViewModel">
+        <member name="T:MinesweeperML.ViewModels.TileViewModel">
             <summary>
             The view model representing a tile on the game board.
             </summary>
-            <seealso cref="T:MinesweeperML.ViewsModel.BaseViewModel" />
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewsModel.TileViewModel.ID">
+        <member name="P:MinesweeperML.ViewModels.TileViewModel.ID">
             <summary>
             Gets or sets the identifier.
             </summary>
             <value>The identifier.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsBomb">
+        <member name="P:MinesweeperML.ViewModels.TileViewModel.IsBomb">
             <summary>
             Gets or sets a value indicating whether this instance is bomb.
             </summary>
             <value><c>true</c> if this instance is bomb; otherwise, <c>false</c>.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsClickable">
+        <member name="P:MinesweeperML.ViewModels.TileViewModel.IsClickable">
             <summary>
             Gets or sets a value indicating whether this instance is visible.
             </summary>
@@ -1248,13 +1315,13 @@
             <c>true</c> if this instance is visible; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.TileViewModel.IsMarked">
+        <member name="P:MinesweeperML.ViewModels.TileViewModel.IsMarked">
             <summary>
             Gets or sets a value indicating whether this instance is marked.
             </summary>
             <value><c>true</c> if this instance is marked; otherwise, <c>false</c>.</value>
         </member>
-        <member name="P:MinesweeperML.ViewsModel.TileViewModel.SurroundingBombs">
+        <member name="P:MinesweeperML.ViewModels.TileViewModel.SurroundingBombs">
             <summary>
             Gets or sets the surrounding bombs.
             </summary>
@@ -1346,6 +1413,19 @@
             </summary>
         </member>
         <member name="M:MinesweeperML.Views.MinesweeperWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.Views.SelectNewGame">
+            <summary>
+            Interaction logic for SelectNewGame.xaml
+            </summary>
+            <summary>
+            SelectNewGame
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.SelectNewGame.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

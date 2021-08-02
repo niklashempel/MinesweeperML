@@ -16,7 +16,7 @@ using MinesweeperML.Enumerations;
 using MinesweeperML.Models;
 using MinesweeperML.Views;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Minesweeper viewmodel.

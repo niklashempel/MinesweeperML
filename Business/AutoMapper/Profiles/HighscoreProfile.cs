@@ -2,7 +2,7 @@
 using AutoMapper;
 using MinesweeperML.Enumerations;
 using MinesweeperML.Models;
-using MinesweeperML.ViewsModel;
+using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.Business.AutoMapper.Profiles
 {

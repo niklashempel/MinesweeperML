@@ -3,8 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using MinesweeperML.Business.Commands;
 using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
+using MinesweeperML.ViewModels;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Main menu view model.
@@ -12,11 +13,10 @@ namespace MinesweeperML.ViewsModel
     /// <seealso cref="BaseViewModel" />
     public class MainMenuViewModel : BaseViewModel
     {
-        private readonly CustomGameViewModel customGameViewModel;
-
         private readonly HighscoresViewModel highscoresViewModel;
+        private readonly SelectNewGameViewModel selectNewGameViewModel;
 
-        private readonly MinesweeperViewModel minesweeperViewModel;
+        private RelayCommand startNewGameCommand;
 
         /// <summary>
         /// Gets the show highscores command.
@@ -49,6 +49,18 @@ namespace MinesweeperML.ViewsModel
         public RelayCommand StartMediumGameCommand { get; private set; }
 
         /// <summary>
+        /// Gets the start new game command.
+        /// </summary>
+        /// <value>The start new game command.</value>
+        public RelayCommand StartNewGameCommand
+        {
+            get
+            {
+                return startNewGameCommand ??= new RelayCommand(param => this.StartNewGame());
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the start window view model.
         /// </summary>
         /// <value>The start window view model.</value>
@@ -58,19 +70,12 @@ namespace MinesweeperML.ViewsModel
         /// Initializes a new instance of the <see cref="MainMenuViewModel" /> class.
         /// </summary>
         /// <param name="highscoresViewModel">The highscores view model.</param>
-        /// <param name="customGameViewModel">The custom game view model.</param>
-        /// <param name="minesweeperViewModel">The minesweeper view model.</param>
-        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, CustomGameViewModel customGameViewModel, MinesweeperViewModel minesweeperViewModel)
+        /// <param name="selectNewGameViewModel">The select new game view model.</param>
+        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel)
         {
-            StartEasyGameCommand = new RelayCommand(param => this.StartEasyGame());
-            StartMediumGameCommand = new RelayCommand(param => this.StartMediumGame());
-            StartHardGameCommand = new RelayCommand(param => this.StartHardGame());
-            StartCustomGameCommand = new RelayCommand(param => this.StartCustomGame());
             ShowHighscoresCommand = new RelayCommand(param => this.ShowHighscores());
             this.highscoresViewModel = highscoresViewModel;
-            this.customGameViewModel = customGameViewModel;
-            this.minesweeperViewModel = minesweeperViewModel;
-            customGameViewModel.MinesweeperViewModel = minesweeperViewModel;
+            this.selectNewGameViewModel = selectNewGameViewModel;
         }
 
         private void ShowHighscores()
@@ -80,32 +85,10 @@ namespace MinesweeperML.ViewsModel
             this.highscoresViewModel.SkipToFirstPageCommand.Execute(null);
         }
 
-        private void StartCustomGame()
+        private void StartNewGame()
         {
-            this.customGameViewModel.MainMenuViewModel = this;
-            StartWindowViewModel.SelectedViewModel = this.customGameViewModel;
-        }
-
-        private void StartEasyGame()
-        {
-            StartGame(10, 8, 7, Difficulty.Easy);
-        }
-
-        private void StartGame(int columns, int rows, int numberOfBombs, Difficulty difficulty)
-        {
-            this.minesweeperViewModel.MainMenuViewModel = this;
-            this.minesweeperViewModel.StartGame(columns, rows, numberOfBombs, difficulty);
-            StartWindowViewModel.SelectedViewModel = minesweeperViewModel;
-        }
-
-        private void StartHardGame()
-        {
-            StartGame(20, 15, 70, Difficulty.Hard);
-        }
-
-        private void StartMediumGame()
-        {
-            StartGame(15, 10, 30, Difficulty.Medium);
+            this.selectNewGameViewModel.SetNavigationViewModels(this, StartWindowViewModel);
+            StartWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
         }
     }
 }

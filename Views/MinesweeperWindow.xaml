@@ -8,7 +8,7 @@
     xmlns:local="clr-namespace:MinesweeperML"
     xmlns:converter="clr-namespace:MinesweeperML.Business.Converter"
     xmlns:enumerations="clr-namespace:MinesweeperML.Enumerations"
-    xmlns:vm="clr-namespace:MinesweeperML.ViewsModel"
+    xmlns:vm="clr-namespace:MinesweeperML.ViewModels"
     MinHeight="550"
     MinWidth="500"
     mc:Ignorable="d">

@@ -1,5 +1,5 @@
 ﻿using System.Windows.Controls;
-using MinesweeperML.ViewsModel;
+using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.Views
 {

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Microsoft.EntityFrameworkCore;
 using MinesweeperML.Business.Database.DbContexts;
-using MinesweeperML.ViewsModel;
+using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.Views
 {

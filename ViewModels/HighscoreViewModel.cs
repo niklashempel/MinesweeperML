@@ -1,12 +1,12 @@
 ﻿using System;
 using MinesweeperML.Enumerations;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// The highscore view model.
     /// </summary>
-    /// <seealso cref="MinesweeperML.ViewsModel.BaseViewModel" />
+    /// <seealso cref="MinesweeperML.ViewModels.BaseViewModel" />
     public class HighscoreViewModel : BaseViewModel
     {
         /// <summary>

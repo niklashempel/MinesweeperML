@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinesweeperML.Business.Commands;
 using MinesweeperML.Business.Database.DbContexts;
+using MinesweeperML.ViewModels;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Custom game view model.
@@ -112,6 +113,12 @@ namespace MinesweeperML.ViewsModel
         }
 
         /// <summary>
+        /// Gets or sets the select new game view model.
+        /// </summary>
+        /// <value>The select new game view model.</value>
+        public SelectNewGameViewModel SelectNewGameViewModel { get; set; }
+
+        /// <summary>
         /// Gets the start game command.
         /// </summary>
         /// <value>The start game command.</value>
@@ -126,7 +133,7 @@ namespace MinesweeperML.ViewsModel
 
         private void GoBack()
         {
-            MainMenuViewModel.StartWindowViewModel.SelectedViewModel = this.MainMenuViewModel;
+            MainMenuViewModel.StartWindowViewModel.SelectedViewModel = this.SelectNewGameViewModel;
         }
 
         private void StartGame()
