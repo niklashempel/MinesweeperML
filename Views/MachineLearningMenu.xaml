@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="MinesweeperML.Views.MachineLearningMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:MinesweeperML.Business.Converter"
+             xmlns:local="clr-namespace:MinesweeperML.Views"
+             mc:Ignorable="d"
+             Width="500"
+             Height="550">
+    <UserControl.Resources>
+        <converters:BooleanToHiddenVisibilityConverter x:Key="BooleanToHiddenVisibilityConverter" />
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid
+        Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button
+                Margin="-20"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                ToolTip="Go back"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding GoBackCommand}">
+                <materialDesign:PackIcon
+                        Kind="LessThan" />
+            </Button>
+            <TextBlock
+            Text="Machine Learning"
+            Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+            TextAlignment="Center"
+            VerticalAlignment="Center" />
+            <TextBlock
+            Margin="0 20 0 20"
+            TextWrapping="Wrap"
+            Grid.Row="1"
+            Grid.ColumnSpan="3" Text="In MinesweeperML, you can use a machine learning model to predict the next move with the highest probability of not being a bomb.&#xD;&#xA;&#xD;&#xA;You can either use the provided model or import a custom one. To generate training data, you can use the button below. The data is written to a .csv file with each column representing a position around the tile that is to be checked.&#xD;&#xA;&#xD;&#xA;X00   X01   X02   X03   X04&#xD;&#xA;&#xD;&#xA;X05   X06   X07   X08   X09&#xD;&#xA;&#xD;&#xA;X10   X11     L      X13   X14&#xD;&#xA;&#xD;&#xA;X15   X16   X17   X18   X19&#xD;&#xA;&#xD;&#xA;X20   X21   X22   X23   X24&#xD;&#xA;&#xD;&#xA;'L' is the label the model predicts. It is either '1', which means there is a bomb. Or '0' indicating there is no bomb." />
+
+            <StackPanel
+            Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Training data file:"  VerticalAlignment="Bottom" Margin="0 0 10 0" HorizontalAlignment="Stretch" />
+                    <TextBox
+                        Grid.Column="1"
+                        Text="{Binding TrainingDataFilePath, Mode=OneWay}"
+                        IsReadOnly="True"
+                        d:Text="C:\users\test.user\Desktop\minesweeper.csv"
+                        VerticalAlignment="Bottom"
+                        VerticalContentAlignment="Bottom"
+                        Padding="0"
+                        HorizontalAlignment="Stretch"
+                        Margin="0 0 10 0" />
+                    <Button
+                        Grid.Column="2"
+                        Content="..." Command="{Binding SetTrainingDataFilePathCommand}" Height="25" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Width="50" HorizontalAlignment="Right" />
+                </Grid>
+                <Grid Margin="0 20 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Number of generated entries:"  VerticalAlignment="Bottom" Margin="0 0 10 0" HorizontalAlignment="Stretch" />
+                    <TextBox Text="{Binding NumberOfTargetEntries}" Grid.Column="1" Padding="0" />
+                </Grid>
+                <Button
+                Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                Margin="0 20 0 0"
+                Content="Generate" Command="{Binding GenerateTrainingDataAsyncCommand}" Height="25" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0 20 0 0" HorizontalAlignment="Center" Visibility="{Binding IsDataGenerating, Converter={StaticResource BooleanToHiddenVisibilityConverter}}">
+                        <Run Text="{Binding GeneratedEntries}" d:Text="10" />
+                        <Run Text="/" />
+                        <Run Text="{Binding NumberOfTargetEntries}" d:Text="100" />
+                    </TextBlock>
+                    <ProgressBar Margin="0 5 0 20" Visibility="{Binding IsDataGenerating, Converter={StaticResource BooleanToHiddenVisibilityConverter}}" Height="10" Grid.Row="1" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

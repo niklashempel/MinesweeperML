@@ -348,6 +348,38 @@
             null value is used.
             </returns>
         </member>
+        <member name="T:MinesweeperML.Business.Converter.BooleanToHiddenVisibilityConverter">
+            <summary>
+            Converts a boolean value to visibility with false to hidden visiblity.
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter" />
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BooleanToHiddenVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
+        <member name="M:MinesweeperML.Business.Converter.BooleanToHiddenVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns <see langword="null" />, the valid
+            null value is used.
+            </returns>
+        </member>
         <member name="T:MinesweeperML.Business.Converter.EnumToDescriptionConverter">
             <summary>
             Convert enum to string using its localized description attribute.
@@ -579,7 +611,7 @@
             Creates a new instance of a derived context.
             </summary>
             <param name="args">Arguments provided by the design-time service.</param>
-            <returns>An instance of <typeparamref name="MinesweeperDbContext" />.</returns>
+            <returns>An instance of <see cref="T:MinesweeperML.Business.Database.DbContexts.MinesweeperDbContext" />.</returns>
         </member>
         <member name="T:MinesweeperML.Business.Database.DbCreator">
             <summary>
@@ -979,12 +1011,6 @@
             </summary>
             <value>The highscores view source.</value>
         </member>
-        <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.MainWindowViewModel">
-            <summary>
-            Gets or sets the main window view model.
-            </summary>
-            <value>The main window view model.</value>
-        </member>
         <member name="P:MinesweeperML.ViewModels.HighscoresViewModel.MaxPage">
             <summary>
             Gets or sets the maximum page.
@@ -1070,17 +1096,73 @@
             </summary>
             <value>The time.</value>
         </member>
+        <member name="T:MinesweeperML.ViewModels.MachineLearningMenuViewModel">
+            <summary>
+            The view model representing the machine learning menu.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.GeneratedEntries">
+            <summary>
+            Gets or sets the generated entries.
+            </summary>
+            <value>The generated entries.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.GenerateTrainingDataAsyncCommand">
+            <summary>
+            Gets the generate training data asynchronous command.
+            </summary>
+            <value>The generate training data asynchronous command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.IsDataGenerating">
+            <summary>
+            Gets or sets a value indicating whether this instance is data generating.
+            </summary>
+            <value>
+            <c>true</c> if this instance is data generating; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.NumberOfTargetEntries">
+            <summary>
+            Gets or sets the number of target entries.
+            </summary>
+            <value>The number of target entries.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetTrainingDataFilePathCommand">
+            <summary>
+            Gets the set training data file path command.
+            </summary>
+            <value>The set training data file path command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.TrainingDataFilePath">
+            <summary>
+            Gets or sets the training data file path.
+            </summary>
+            <value>The training data file path.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
+            <summary>
+            Sets the main menu view model.
+            </summary>
+            <param name="mainMenuViewModel">The main menu view model.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel)">
+            <summary>
+            Sets the start window view model.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
         <member name="T:MinesweeperML.ViewModels.MainMenuViewModel">
             <summary>
             Main menu view model.
             </summary>
             <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowHighscoresCommand">
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowMachineLearningMenuCommand">
             <summary>
-            Gets the show highscores command.
+            Gets the show machine learning menu command.
             </summary>
-            <value>The show highscores command.</value>
+            <value>The show machine learning menu command.</value>
         </member>
         <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartCustomGameCommand">
             <summary>
@@ -1116,14 +1198,17 @@
             <summary>
             Gets or sets the start window view model.
             </summary>
-            <value>The start window view model.</value>
+            <returns>The start window view model.</returns>
         </member>
-        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel)">
+        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MainMenuViewModel" /> class.
             </summary>
             <param name="highscoresViewModel">The highscores view model.</param>
             <param name="selectNewGameViewModel">The select new game view model.</param>
+            <param name="machineLearningMenuViewModel">
+            The machine learning menu view model.
+            </param>
         </member>
         <member name="T:MinesweeperML.ViewModels.MinesweeperViewModel">
             <summary>
@@ -1251,12 +1336,6 @@
             </summary>
             <value>The start medium game command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewModels.SelectNewGameViewModel.StartWindowViewModel">
-            <summary>
-            Gets or sets the start window view model.
-            </summary>
-            <value>The start window view model.</value>
-        </member>
         <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.#ctor(MinesweeperML.ViewModels.CustomGameViewModel,MinesweeperML.ViewModels.MinesweeperViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.SelectNewGameViewModel" /> class.
@@ -1264,11 +1343,16 @@
             <param name="customGameViewModel">The custom game view model.</param>
             <param name="minesweeperViewModel">The minesweeper view model.</param>
         </member>
-        <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.SetNavigationViewModels(MinesweeperML.ViewModels.MainMenuViewModel,MinesweeperML.ViewModels.StartWindowViewModel)">
+        <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
             <summary>
-            Sets the navigation view models.
+            Sets the main menu view model.
             </summary>
             <param name="mainMenuViewModel">The main menu view model.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel)">
+            <summary>
+            Sets the start window view model.
+            </summary>
             <param name="startWindowViewModel">The start window view model.</param>
         </member>
         <member name="T:MinesweeperML.ViewModels.StartWindowViewModel">
@@ -1381,6 +1465,19 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:MinesweeperML.Views.MachineLearningMenu">
+            <summary>
+            Interaction logic for MachineLearningMenu.xaml
+            </summary>
+            <summary>
+            MachineLearningMenu
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MachineLearningMenu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:MinesweeperML.Views.MainMenu">
             <summary>
             Interaction logic for MainMenu.xaml.
@@ -1419,10 +1516,15 @@
         </member>
         <member name="T:MinesweeperML.Views.SelectNewGame">
             <summary>
-            Interaction logic for SelectNewGame.xaml
+            Interaction logic for SelectNewGame.xaml.
             </summary>
             <summary>
             SelectNewGame
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.SelectNewGame.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.SelectNewGame" /> class.
             </summary>
         </member>
         <member name="M:MinesweeperML.Views.SelectNewGame.InitializeComponent">

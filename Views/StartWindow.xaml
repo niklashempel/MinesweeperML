@@ -29,6 +29,9 @@
         <DataTemplate DataType="{x:Type viewmodels:SelectNewGameViewModel}">
             <views:SelectNewGame DataContext="{Binding}" />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MachineLearningMenuViewModel}">
+            <views:MachineLearningMenu DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl

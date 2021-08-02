@@ -1,4 +1,5 @@
-﻿using MinesweeperML.Business.Commands;
+﻿using System;
+using MinesweeperML.Business.Commands;
 using MinesweeperML.Enumerations;
 using MinesweeperML.ViewModels;
 
@@ -16,10 +17,9 @@ namespace MinesweeperML.ViewModels
         private MainMenuViewModel mainMenuViewModel;
         private RelayCommand startCustomGameCommand;
         private RelayCommand startEasyGameCommand;
-
         private RelayCommand startHardGameCommand;
-
         private RelayCommand startMediumGameCommand;
+        private StartWindowViewModel startWindowViewModel;
 
         /// <summary>
         /// Gets the go back command.
@@ -82,12 +82,6 @@ namespace MinesweeperML.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the start window view model.
-        /// </summary>
-        /// <value>The start window view model.</value>
-        public StartWindowViewModel StartWindowViewModel { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="SelectNewGameViewModel" /> class.
         /// </summary>
         /// <param name="customGameViewModel">The custom game view model.</param>
@@ -100,14 +94,21 @@ namespace MinesweeperML.ViewModels
         }
 
         /// <summary>
-        /// Sets the navigation view models.
+        /// Sets the main menu view model.
         /// </summary>
         /// <param name="mainMenuViewModel">The main menu view model.</param>
-        /// <param name="startWindowViewModel">The start window view model.</param>
-        public void SetNavigationViewModels(MainMenuViewModel mainMenuViewModel, StartWindowViewModel startWindowViewModel)
+        public void SetMainMenuViewModel(MainMenuViewModel mainMenuViewModel)
         {
             this.mainMenuViewModel = mainMenuViewModel;
-            this.StartWindowViewModel = startWindowViewModel;
+        }
+
+        /// <summary>
+        /// Sets the start window view model.
+        /// </summary>
+        /// <param name="startWindowViewModel">The start window view model.</param>
+        public void SetStartWindowViewModel(StartWindowViewModel startWindowViewModel)
+        {
+            this.startWindowViewModel = startWindowViewModel;
         }
 
         private void GoBack()
@@ -119,7 +120,7 @@ namespace MinesweeperML.ViewModels
         {
             this.customGameViewModel.MainMenuViewModel = this.mainMenuViewModel;
             this.customGameViewModel.SelectNewGameViewModel = this;
-            StartWindowViewModel.SelectedViewModel = this.customGameViewModel;
+            startWindowViewModel.SelectedViewModel = this.customGameViewModel;
         }
 
         private void StartEasyGame()
@@ -131,7 +132,7 @@ namespace MinesweeperML.ViewModels
         {
             this.minesweeperViewModel.MainMenuViewModel = this.mainMenuViewModel;
             this.minesweeperViewModel.StartGame(columns, rows, numberOfBombs, difficulty);
-            StartWindowViewModel.SelectedViewModel = minesweeperViewModel;
+            startWindowViewModel.SelectedViewModel = minesweeperViewModel;
         }
 
         private void StartHardGame()

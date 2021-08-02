@@ -39,6 +39,11 @@
             <Button
                 Margin="20"
                 Height="30"
+                Content="ML"
+                Command="{Binding ShowMachineLearningMenuCommand}" />
+            <Button
+                Margin="20"
+                Height="30"
                 Content="Highscores"
                 Command="{Binding ShowHighscoresCommand}" />
         </StackPanel>

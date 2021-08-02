@@ -14,15 +14,33 @@ namespace MinesweeperML.ViewModels
     public class MainMenuViewModel : BaseViewModel
     {
         private readonly HighscoresViewModel highscoresViewModel;
+        private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
         private readonly SelectNewGameViewModel selectNewGameViewModel;
-
+        private RelayCommand showHighscoresCommand;
+        private RelayCommand showMachineLearningMenuCommand;
         private RelayCommand startNewGameCommand;
 
+        private StartWindowViewModel startWindowViewModel;
+
+        public RelayCommand ShowHighscoresCommand
+        {
+            get
+            {
+                return showHighscoresCommand ??= new RelayCommand(param => this.ShowHighscores());
+            }
+        }
+
         /// <summary>
-        /// Gets the show highscores command.
+        /// Gets the show machine learning menu command.
         /// </summary>
-        /// <value>The show highscores command.</value>
-        public RelayCommand ShowHighscoresCommand { get; private set; }
+        /// <value>The show machine learning menu command.</value>
+        public RelayCommand ShowMachineLearningMenuCommand
+        {
+            get
+            {
+                return showMachineLearningMenuCommand ??= new RelayCommand(param => this.ShowMachineLearningMenu());
+            }
+        }
 
         /// <summary>
         /// Gets the start customer game command.
@@ -63,32 +81,56 @@ namespace MinesweeperML.ViewModels
         /// <summary>
         /// Gets or sets the start window view model.
         /// </summary>
-        /// <value>The start window view model.</value>
-        public StartWindowViewModel StartWindowViewModel { get; set; }
+        /// <returns>The start window view model.</returns>
+        public StartWindowViewModel StartWindowViewModel
+        {
+            get
+            {
+                return startWindowViewModel;
+            }
+            set
+            {
+                if (startWindowViewModel != value)
+                {
+                    startWindowViewModel = value;
+                    this.machineLearningMenuViewModel.SetStartWindowViewModel(value);
+                    this.selectNewGameViewModel.SetStartWindowViewModel(StartWindowViewModel);
+                }
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainMenuViewModel" /> class.
         /// </summary>
         /// <param name="highscoresViewModel">The highscores view model.</param>
         /// <param name="selectNewGameViewModel">The select new game view model.</param>
-        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel)
+        /// <param name="machineLearningMenuViewModel">
+        /// The machine learning menu view model.
+        /// </param>
+        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel)
         {
-            ShowHighscoresCommand = new RelayCommand(param => this.ShowHighscores());
             this.highscoresViewModel = highscoresViewModel;
+            this.highscoresViewModel.SetMainMenuViewModel(this);
             this.selectNewGameViewModel = selectNewGameViewModel;
+            this.selectNewGameViewModel.SetMainMenuViewModel(this);
+            this.machineLearningMenuViewModel = machineLearningMenuViewModel;
+            this.machineLearningMenuViewModel.SetMainMenuViewModel(this);
         }
 
         private void ShowHighscores()
         {
-            StartWindowViewModel.SelectedViewModel = this.highscoresViewModel;
-            this.highscoresViewModel.MainWindowViewModel = this;
+            startWindowViewModel.SelectedViewModel = this.highscoresViewModel;
             this.highscoresViewModel.SkipToFirstPageCommand.Execute(null);
+        }
+
+        private void ShowMachineLearningMenu()
+        {
+            startWindowViewModel.SelectedViewModel = this.machineLearningMenuViewModel;
         }
 
         private void StartNewGame()
         {
-            this.selectNewGameViewModel.SetNavigationViewModels(this, StartWindowViewModel);
-            StartWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
+            startWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
         }
     }
 }
