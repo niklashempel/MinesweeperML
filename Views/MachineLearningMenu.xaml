@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:MinesweeperML.Business.Converter"
              xmlns:local="clr-namespace:MinesweeperML.Views"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              Width="500"
              Height="550">
@@ -53,7 +54,7 @@
                     <TextBlock Text="Training data file:"  VerticalAlignment="Bottom" Margin="0 0 10 0" HorizontalAlignment="Stretch" />
                     <TextBox
                         Grid.Column="1"
-                        Text="{Binding TrainingDataFilePath, Mode=OneWay}"
+                        Text="{Binding TrainingDataFilePath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         IsReadOnly="True"
                         d:Text="C:\users\test.user\Desktop\minesweeper.csv"
                         VerticalAlignment="Bottom"
@@ -71,7 +72,7 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Number of generated entries:"  VerticalAlignment="Bottom" Margin="0 0 10 0" HorizontalAlignment="Stretch" />
-                    <TextBox Text="{Binding NumberOfTargetEntries}" Grid.Column="1" Padding="0" />
+                    <TextBox Text="{Binding NumberOfTargetEntries, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Static system:String.Empty}}" Grid.Column="1" Padding="0" />
                 </Grid>
                 <Button
                 Style="{StaticResource MaterialDesignRaisedAccentButton}"

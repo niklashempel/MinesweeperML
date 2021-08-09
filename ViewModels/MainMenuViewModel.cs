@@ -13,6 +13,7 @@ namespace MinesweeperML.ViewModels
     /// <seealso cref="BaseViewModel" />
     public class MainMenuViewModel : BaseViewModel
     {
+        private readonly GameViewModel gameViewModel;
         private readonly HighscoresViewModel highscoresViewModel;
         private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
         private readonly SelectNewGameViewModel selectNewGameViewModel;
@@ -22,6 +23,10 @@ namespace MinesweeperML.ViewModels
 
         private StartWindowViewModel startWindowViewModel;
 
+        /// <summary>
+        /// Gets the show highscores command.
+        /// </summary>
+        /// <value>The show highscores command.</value>
         public RelayCommand ShowHighscoresCommand
         {
             get
@@ -93,7 +98,7 @@ namespace MinesweeperML.ViewModels
                 if (startWindowViewModel != value)
                 {
                     startWindowViewModel = value;
-                    this.machineLearningMenuViewModel.SetStartWindowViewModel(value);
+                    this.machineLearningMenuViewModel.SetStartWindowViewModel(value, this.gameViewModel);
                     this.selectNewGameViewModel.SetStartWindowViewModel(StartWindowViewModel);
                 }
             }
@@ -107,8 +112,10 @@ namespace MinesweeperML.ViewModels
         /// <param name="machineLearningMenuViewModel">
         /// The machine learning menu view model.
         /// </param>
-        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel)
+        /// <param name="gameViewModel">The game view model.</param>
+        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel, GameViewModel gameViewModel)
         {
+            this.gameViewModel = gameViewModel;
             this.highscoresViewModel = highscoresViewModel;
             this.highscoresViewModel.SetMainMenuViewModel(this);
             this.selectNewGameViewModel = selectNewGameViewModel;

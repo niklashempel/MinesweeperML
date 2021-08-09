@@ -131,7 +131,8 @@ namespace MinesweeperML.ViewModels
         private void StartGame(int columns, int rows, int numberOfBombs, Difficulty difficulty)
         {
             this.minesweeperViewModel.MainMenuViewModel = this.mainMenuViewModel;
-            this.minesweeperViewModel.StartGame(columns, rows, numberOfBombs, difficulty);
+            this.minesweeperViewModel.SetGameSettings(columns, rows, numberOfBombs, difficulty);
+            this.minesweeperViewModel.StartGame();
             startWindowViewModel.SelectedViewModel = minesweeperViewModel;
         }
 

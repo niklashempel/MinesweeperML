@@ -139,7 +139,8 @@ namespace MinesweeperML.ViewModels
         private void StartGame()
         {
             this.MinesweeperViewModel.MainMenuViewModel = this.MainMenuViewModel;
-            this.MinesweeperViewModel.StartGame(rows, columns, bombs, Enumerations.Difficulty.Custom);
+            this.MinesweeperViewModel.SetGameSettings(columns, rows, bombs, Enumerations.Difficulty.Custom);
+            this.MinesweeperViewModel.StartGame();
             MainMenuViewModel.StartWindowViewModel.SelectedViewModel = this.MinesweeperViewModel;
         }
     }

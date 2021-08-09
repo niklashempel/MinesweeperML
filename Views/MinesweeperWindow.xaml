@@ -168,7 +168,7 @@
                         HorizontalAlignment="Center"
                         Width="100"
                         Height="30"
-                        Text="{Binding RemainingBombs}" />
+                        Text="{Binding GameViewModel.RemainingBombs}" />
                 </Border>
                 <Button
                     Grid.Column="2"
@@ -181,14 +181,14 @@
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding GameWon}" Value="False">
+                                <DataTrigger Binding="{Binding GameViewModel.GameWon}" Value="False">
                                     <Setter Property="Content">
                                         <Setter.Value>
                                             <materialDesign:PackIcon Kind="EmoticonSad" Width="20" Height="20" />
                                         </Setter.Value>
                                     </Setter>
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding GameWon}" Value="True">
+                                <DataTrigger Binding="{Binding GameViewModel.GameWon}" Value="True">
                                     <Setter Property="Content">
                                         <Setter.Value>
                                             <materialDesign:PackIcon Kind="SmileyHappy" Width="20" Height="20" />
@@ -212,14 +212,14 @@
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding CurrentMode}" Value="{x:Static enumerations:ClickMode.Mark}">
+                                <DataTrigger Binding="{Binding GameViewModel.CurrentMode}" Value="{x:Static enumerations:ClickMode.Mark}">
                                     <Setter Property="Content">
                                         <Setter.Value>
                                             <materialDesign:PackIcon Kind="FlagVariant" />
                                         </Setter.Value>
                                     </Setter>
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding GameWon}" Value="{x:Null}">
+                                <DataTrigger Binding="{Binding GameViewModel.GameWon}" Value="{x:Null}">
                                     <Setter Property="IsEnabled" Value="True" />
                                 </DataTrigger>
                             </Style.Triggers>
@@ -239,7 +239,7 @@
                         HorizontalAlignment="Center"
                         Width="100"
                         Height="30"
-                        Text="{Binding Time, Converter={StaticResource StopwatchConverter}}" />
+                        Text="{Binding GameViewModel.Time, Converter={StaticResource StopwatchConverter}}" />
                 </Border>
             </Grid>
         </Border>
@@ -248,7 +248,7 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             x:Name="MyTiles"
-            ItemsSource="{Binding Tiles}"
+            ItemsSource="{Binding GameViewModel.Tiles}"
             ItemTemplate="{DynamicResource DataTemplate_Level1}" />
     </Grid>
 </UserControl>

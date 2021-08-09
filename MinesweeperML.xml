@@ -81,6 +81,18 @@
             Initializes a new instance of the <see cref="T:MinesweeperML.Business.AutoMapper.Profiles.HighscoreProfile" /> class.
             </summary>
         </member>
+        <member name="T:MinesweeperML.Business.AutoMapper.Profiles.TrainingDataProfile">
+            <summary>
+            The training data profile to map between <see cref="T:MinesweeperML.ViewModels.TrainingDataViewModel" /> and
+            <see cref="T:MinesweeperML.Models.TrainingData" />.
+            </summary>
+            <seealso cref="T:AutoMapper.Profile" />
+        </member>
+        <member name="M:MinesweeperML.Business.AutoMapper.Profiles.TrainingDataProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Business.AutoMapper.Profiles.TrainingDataProfile" /> class.
+            </summary>
+        </member>
         <member name="T:MinesweeperML.Business.Commands.AsyncCommand">
             <summary>
             Implements asynchronous command.
@@ -853,6 +865,71 @@
             The custom.
             </summary>
         </member>
+        <member name="T:MinesweeperML.Enumerations.Feature">
+            <summary>
+            The feature enumeration.
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.OutOfField">
+            <summary>
+            The out of field
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.Unknown">
+            <summary>
+            The unknown
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.NoBomb">
+            <summary>
+            The no bomb
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.OneBomb">
+            <summary>
+            The one bomb
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.TwoBombs">
+            <summary>
+            The two bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.ThreeBombs">
+            <summary>
+            The three bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.FourBombs">
+            <summary>
+            The four bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.FiveBombs">
+            <summary>
+            The five bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.SixBombs">
+            <summary>
+            The six bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.SevenBombs">
+            <summary>
+            The seven bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.EightBombs">
+            <summary>
+            The eight bombs
+            </summary>
+        </member>
+        <member name="F:MinesweeperML.Enumerations.Feature.Marked">
+            <summary>
+            The marked
+            </summary>
+        </member>
         <member name="T:MinesweeperML.Models.Highscore">
             <summary>
             Highscore.
@@ -875,6 +952,162 @@
             Gets or sets the time.
             </summary>
             <value>The time.</value>
+        </member>
+        <member name="T:MinesweeperML.Models.TrainingData">
+            <summary>
+            The model representing a training data set.
+            </summary>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.Label">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:MinesweeperML.Models.TrainingData" /> is
+            label.
+            </summary>
+            <value><c>true</c> if label; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X00">
+            <summary>
+            Gets or sets the X00.
+            </summary>
+            <value>The X00.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X01">
+            <summary>
+            Gets or sets the X01.
+            </summary>
+            <value>The X01.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X02">
+            <summary>
+            Gets or sets the X02.
+            </summary>
+            <value>The X02.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X03">
+            <summary>
+            Gets or sets the X03.
+            </summary>
+            <value>The X03.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X04">
+            <summary>
+            Gets or sets the X04.
+            </summary>
+            <value>The X04.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X10">
+            <summary>
+            Gets or sets the X10.
+            </summary>
+            <value>The X10.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X11">
+            <summary>
+            Gets or sets the X11.
+            </summary>
+            <value>The X11.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X12">
+            <summary>
+            Gets or sets the X12.
+            </summary>
+            <value>The X12.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X13">
+            <summary>
+            Gets or sets the X13.
+            </summary>
+            <value>The X13.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X14">
+            <summary>
+            Gets or sets the X14.
+            </summary>
+            <value>The X14.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X20">
+            <summary>
+            Gets or sets the X20.
+            </summary>
+            <value>The X20.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X21">
+            <summary>
+            Gets or sets the X21.
+            </summary>
+            <value>The X21.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X23">
+            <summary>
+            Gets or sets the X23.
+            </summary>
+            <value>The X23.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X24">
+            <summary>
+            Gets or sets the X24.
+            </summary>
+            <value>The X24.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X30">
+            <summary>
+            Gets or sets the X30.
+            </summary>
+            <value>The X30.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X31">
+            <summary>
+            Gets or sets the X31.
+            </summary>
+            <value>The X31.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X32">
+            <summary>
+            Gets or sets the X32.
+            </summary>
+            <value>The X32.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X33">
+            <summary>
+            Gets or sets the X33.
+            </summary>
+            <value>The X33.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X34">
+            <summary>
+            Gets or sets the X34.
+            </summary>
+            <value>The X34.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X40">
+            <summary>
+            Gets or sets the X40.
+            </summary>
+            <value>The X40.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X41">
+            <summary>
+            Gets or sets the X41.
+            </summary>
+            <value>The X41.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X42">
+            <summary>
+            Gets or sets the X42.
+            </summary>
+            <value>The X42.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X43">
+            <summary>
+            Gets or sets the X43.
+            </summary>
+            <value>The X43.</value>
+        </member>
+        <member name="P:MinesweeperML.Models.TrainingData.X44">
+            <summary>
+            Gets or sets the X44.
+            </summary>
+            <value>The X44.</value>
         </member>
         <member name="T:MinesweeperML.ViewModels.BaseViewModel">
             <summary>
@@ -956,6 +1189,77 @@
         <member name="M:MinesweeperML.ViewModels.CustomGameViewModel.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.CustomGameViewModel" /> class.
+            </summary>
+        </member>
+        <member name="T:MinesweeperML.ViewModels.GameViewModel">
+            <summary>
+            The game view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.GameViewModel.CurrentMode">
+            <summary>
+            Gets or sets the current mode.
+            </summary>
+            <value>The current mode.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.GameViewModel.GameWon">
+            <summary>
+            Gets or sets the game won.
+            </summary>
+            <value>The game won.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.GameViewModel.RemainingBombs">
+            <summary>
+            Gets or sets the remaining bombs.
+            </summary>
+            <value>The remaining bombs.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.GameViewModel.Tiles">
+            <summary>
+            Gets or sets the tiles.
+            </summary>
+            <value>The tiles.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.GameViewModel.Time">
+            <summary>
+            Gets or sets the time.
+            </summary>
+            <value>The time.</value>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.GameViewModel.ClickNotBombs(System.Int32@,System.Collections.Generic.List{MinesweeperML.ViewModels.TrainingDataViewModel}@)">
+            <summary>
+            Clicks the not bombs.
+            </summary>
+            <param name="maxEntries">The maximum entries.</param>
+            <param name="trainingDataViewModels">The training data view models.</param>
+            <returns>True if a save tile was found. Else false.</returns>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.GameViewModel.ClickTile(MinesweeperML.ViewModels.TileViewModel,System.Boolean)">
+            <summary>
+            Clicks the tile.
+            </summary>
+            <param name="clickedTile">The clicked tile.</param>
+            <param name="doTraining">if set to <c>true</c> [do training].</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.GameViewModel.RightClickTile(MinesweeperML.ViewModels.TileViewModel)">
+            <summary>
+            Rights the click tile.
+            </summary>
+            <param name="tile">The tile.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.GameViewModel.StartGame(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
+            <summary>
+            Starts the game.
+            </summary>
+            <param name="columns">The columns.</param>
+            <param name="rows">The rows.</param>
+            <param name="numberOfBombs">The number of bombs.</param>
+            <param name="difficulty">The difficulty.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.GameViewModel.SwitchClickMode">
+            <summary>
+            Switches the click mode.
             </summary>
         </member>
         <member name="T:MinesweeperML.ViewModels.GameWonDialogViewModel">
@@ -1056,6 +1360,12 @@
             </param>
             <param name="mapper">The mapper.</param>
         </member>
+        <member name="M:MinesweeperML.ViewModels.HighscoresViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
+            <summary>
+            Sets the main menu view model.
+            </summary>
+            <param name="mainMenuViewModel">The main menu view model.</param>
+        </member>
         <member name="M:MinesweeperML.ViewModels.HighscoresViewModel.SkipToLastPage">
             <summary>
             Skips to last page.
@@ -1114,6 +1424,12 @@
             </summary>
             <value>The generate training data asynchronous command.</value>
         </member>
+        <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
         <member name="P:MinesweeperML.ViewModels.MachineLearningMenuViewModel.IsDataGenerating">
             <summary>
             Gets or sets a value indicating whether this instance is data generating.
@@ -1140,23 +1456,42 @@
             </summary>
             <value>The training data file path.</value>
         </member>
+        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.#ctor(AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MachineLearningMenuViewModel" />
+            class.
+            </summary>
+            <param name="mapper">The mapper.</param>
+        </member>
         <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
             <summary>
             Sets the main menu view model.
             </summary>
             <param name="mainMenuViewModel">The main menu view model.</param>
         </member>
-        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel)">
+        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel,MinesweeperML.ViewModels.GameViewModel)">
             <summary>
             Sets the start window view model.
             </summary>
             <param name="value">The value.</param>
+            <param name="gameViewModel">The game view model.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.MachineLearningMenuViewModel.GenerateTrainingDataAsync">
+            <summary>
+            Generates the training data asynchronous.
+            </summary>
         </member>
         <member name="T:MinesweeperML.ViewModels.MainMenuViewModel">
             <summary>
             Main menu view model.
             </summary>
             <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowHighscoresCommand">
+            <summary>
+            Gets the show highscores command.
+            </summary>
+            <value>The show highscores command.</value>
         </member>
         <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowMachineLearningMenuCommand">
             <summary>
@@ -1200,7 +1535,7 @@
             </summary>
             <returns>The start window view model.</returns>
         </member>
-        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel)">
+        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel,MinesweeperML.ViewModels.GameViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MainMenuViewModel" /> class.
             </summary>
@@ -1209,6 +1544,7 @@
             <param name="machineLearningMenuViewModel">
             The machine learning menu view model.
             </param>
+            <param name="gameViewModel">The game view model.</param>
         </member>
         <member name="T:MinesweeperML.ViewModels.MinesweeperViewModel">
             <summary>
@@ -1222,17 +1558,11 @@
             </summary>
             <value>The change mode command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.CurrentMode">
+        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.GameViewModel">
             <summary>
-            Gets or sets the current mode.
+            Gets or sets the game view model.
             </summary>
-            <value>The current mode.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.GameWon">
-            <summary>
-            Gets or sets the game won.
-            </summary>
-            <value>The game won.</value>
+            <value>The game view model.</value>
         </member>
         <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.GoBackCommand">
             <summary>
@@ -1245,12 +1575,6 @@
             Gets or sets the main menu view model.
             </summary>
             <value>The main menu view model.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.RemainingBombs">
-            <summary>
-            Gets or sets the remaining bombs.
-            </summary>
-            <value>The remaining bombs.</value>
         </member>
         <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.StartNewGameCommand">
             <summary>
@@ -1270,19 +1594,7 @@
             </summary>
             <value>The tile right clicked command.</value>
         </member>
-        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.Tiles">
-            <summary>
-            Gets or sets the tiles.
-            </summary>
-            <value>The tiles.</value>
-        </member>
-        <member name="P:MinesweeperML.ViewModels.MinesweeperViewModel.Time">
-            <summary>
-            Gets or sets the time.
-            </summary>
-            <value>The time.</value>
-        </member>
-        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.#ctor(AutoMapper.IMapper,MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory)">
+        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.#ctor(AutoMapper.IMapper,MinesweeperML.Business.Database.DbContexts.MinesweeperDbContextFactory,MinesweeperML.ViewModels.GameViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MinesweeperViewModel" /> class.
             </summary>
@@ -1290,15 +1602,21 @@
             <param name="minesweeperDbContextFactory">
             The minesweeper database context factory.
             </param>
+            <param name="gameViewModel">The game view model.</param>
         </member>
-        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.StartGame(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
+        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.SetGameSettings(System.Int32,System.Int32,System.Int32,MinesweeperML.Enumerations.Difficulty)">
             <summary>
-            Starts the game.
+            Sets the game settings.
             </summary>
             <param name="columns">The columns.</param>
             <param name="rows">The rows.</param>
             <param name="numberOfBombs">The number of bombs.</param>
             <param name="difficulty">The difficulty.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.MinesweeperViewModel.StartGame">
+            <summary>
+            Starts the game.
+            </summary>
         </member>
         <member name="T:MinesweeperML.ViewModels.SelectNewGameViewModel">
             <summary>
@@ -1411,6 +1729,163 @@
             </summary>
             <value>The surrounding bombs.</value>
         </member>
+        <member name="T:MinesweeperML.ViewModels.TrainingDataViewModel">
+            <summary>
+            The training data view model contains a single training view model.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.Label">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:MinesweeperML.ViewModels.TrainingDataViewModel"
+            /> is label.
+            </summary>
+            <value><c>true</c> if label; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X00">
+            <summary>
+            Gets or sets the X00.
+            </summary>
+            <value>The X00.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X01">
+            <summary>
+            Gets or sets the X01.
+            </summary>
+            <value>The X01.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X02">
+            <summary>
+            Gets or sets the X02.
+            </summary>
+            <value>The X02.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X03">
+            <summary>
+            Gets or sets the X03.
+            </summary>
+            <value>The X03.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X04">
+            <summary>
+            Gets or sets the X04.
+            </summary>
+            <value>The X04.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X10">
+            <summary>
+            Gets or sets the X10.
+            </summary>
+            <value>The X10.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X11">
+            <summary>
+            Gets or sets the X11.
+            </summary>
+            <value>The X11.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X12">
+            <summary>
+            Gets or sets the X12.
+            </summary>
+            <value>The X12.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X13">
+            <summary>
+            Gets or sets the X13.
+            </summary>
+            <value>The X13.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X14">
+            <summary>
+            Gets or sets the X14.
+            </summary>
+            <value>The X14.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X20">
+            <summary>
+            Gets or sets the X20.
+            </summary>
+            <value>The X20.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X21">
+            <summary>
+            Gets or sets the X21.
+            </summary>
+            <value>The X21.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X23">
+            <summary>
+            Gets or sets the X23.
+            </summary>
+            <value>The X23.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X24">
+            <summary>
+            Gets or sets the X24.
+            </summary>
+            <value>The X24.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X30">
+            <summary>
+            Gets or sets the X30.
+            </summary>
+            <value>The X30.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X31">
+            <summary>
+            Gets or sets the X31.
+            </summary>
+            <value>The X31.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X32">
+            <summary>
+            Gets or sets the X32.
+            </summary>
+            <value>The X32.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X33">
+            <summary>
+            Gets or sets the X33.
+            </summary>
+            <value>The X33.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X34">
+            <summary>
+            Gets or sets the X34.
+            </summary>
+            <value>The X34.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X40">
+            <summary>
+            Gets or sets the X40.
+            </summary>
+            <value>The X40.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X41">
+            <summary>
+            Gets or sets the X41.
+            </summary>
+            <value>The X41.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X42">
+            <summary>
+            Gets or sets the X42.
+            </summary>
+            <value>The X42.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X43">
+            <summary>
+            Gets or sets the X43.
+            </summary>
+            <value>The X43.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.TrainingDataViewModel.X44">
+            <summary>
+            Gets or sets the X44.
+            </summary>
+            <value>The X44.</value>
+        </member>
         <member name="T:MinesweeperML.Views.CustomGameSettings">
             <summary>
             Interaction logic for CustomGameSettings.xaml.
@@ -1467,10 +1942,15 @@
         </member>
         <member name="T:MinesweeperML.Views.MachineLearningMenu">
             <summary>
-            Interaction logic for MachineLearningMenu.xaml
+            Interaction logic for MachineLearningMenu.xaml.
             </summary>
             <summary>
             MachineLearningMenu
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.MachineLearningMenu.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.Views.MachineLearningMenu" /> class.
             </summary>
         </member>
         <member name="M:MinesweeperML.Views.MachineLearningMenu.InitializeComponent">
