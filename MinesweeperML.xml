@@ -1106,6 +1106,12 @@
             </summary>
             <value>The start window view model.</value>
         </member>
+        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.ToogleDarkmode">
+            <summary>
+            Gets or sets a value indicating whether [toogle darkmode].
+            </summary>
+            <value><c>true</c> if [toogle darkmode]; otherwise, <c>false</c>.</value>
+        </member>
         <member name="M:MinesweeperML.ViewsModel.MainMenuViewModel.#ctor(MinesweeperML.ViewsModel.HighscoresViewModel,MinesweeperML.ViewsModel.CustomGameViewModel,MinesweeperML.ViewsModel.MinesweeperViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewsModel.MainMenuViewModel" /> class.

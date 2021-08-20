@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
 using Microsoft.EntityFrameworkCore;
 using MinesweeperML.Business.Commands;
 using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
+using System;
 
 namespace MinesweeperML.ViewsModel
 {
@@ -12,11 +13,13 @@ namespace MinesweeperML.ViewsModel
     /// <seealso cref="BaseViewModel" />
     public class MainMenuViewModel : BaseViewModel
     {
+        private readonly PaletteHelper _paletteHelper = new PaletteHelper();
         private readonly CustomGameViewModel customGameViewModel;
 
         private readonly HighscoresViewModel highscoresViewModel;
 
         private readonly MinesweeperViewModel minesweeperViewModel;
+        private bool _toogleDarkmode;
 
         /// <summary>
         /// Gets the show highscores command.
@@ -53,6 +56,28 @@ namespace MinesweeperML.ViewsModel
         /// </summary>
         /// <value>The start window view model.</value>
         public StartWindowViewModel StartWindowViewModel { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [toogle darkmode].
+        /// </summary>
+        /// <value><c>true</c> if [toogle darkmode]; otherwise, <c>false</c>.</value>
+        public bool ToogleDarkmode
+        {
+            get => _toogleDarkmode;
+            set
+            {
+                if (value != _toogleDarkmode)
+                {
+                    _toogleDarkmode = value;
+                    NotifyPropertyChanged(nameof(_toogleDarkmode));
+
+                    ITheme theme = _paletteHelper.GetTheme();
+                    IBaseTheme baseTheme = _toogleDarkmode ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
+                    theme.SetBaseTheme(baseTheme);
+                    _paletteHelper.SetTheme(theme);
+                }
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainMenuViewModel" /> class.
