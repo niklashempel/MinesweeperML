@@ -6,6 +6,7 @@ using System.Windows;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MinesweeperML.Business;
 using MinesweeperML.Business.AutoMapper;
 using MinesweeperML.Business.Constants;
 using MinesweeperML.Business.Database;
@@ -59,6 +60,9 @@ namespace MinesweeperML
             ConfigureContainer(container);
 
             errorHandler = container.Resolve<IErrorHandler>();
+
+            // Set theme
+            ThemeHandler.ChangeTheme(MinesweeperML.Properties.Settings.Default.IsDarkmode);
 
             var viewModel = container.Resolve<StartWindowViewModel>();
             var view = container.Resolve<StartWindow>();

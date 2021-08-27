@@ -16,10 +16,13 @@ using System.Windows.Shapes;
 namespace MinesweeperML.Views
 {
     /// <summary>
-    /// Interaction logic for SettingsMenu.xaml
+    /// Interaction logic for SettingsMenu.xaml.
     /// </summary>
     public partial class SettingsMenu : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingsMenu" /> class.
+        /// </summary>
         public SettingsMenu()
         {
             InitializeComponent();

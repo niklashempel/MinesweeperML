@@ -46,5 +46,17 @@ namespace MinesweeperML.Properties {
                 this["DefaultCulture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDarkmode {
+            get {
+                return ((bool)(this["IsDarkmode"]));
+            }
+            set {
+                this["IsDarkmode"] = value;
+            }
+        }
     }
 }

@@ -732,6 +732,17 @@
             </summary>
             <param name="ex">The exception.</param>
         </member>
+        <member name="T:MinesweeperML.Business.ThemeHandler">
+            <summary>
+            Handles the theme.
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Business.ThemeHandler.ChangeTheme(System.Boolean)">
+            <summary>
+            Changes the theme.
+            </summary>
+            <param name="useDarkmode">if set to <c>true</c> [use darkmode].</param>
+        </member>
         <member name="T:MinesweeperML.Cultures.CultureResources">
             <summary>
             Wraps up XAML access to instance of WPFLocalize.Properties.Resources, list of
@@ -1700,11 +1711,10 @@
             <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.#ctor(MaterialDesignThemes.Wpf.PaletteHelper)">
+        <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.InitializeSettings">
             <summary>
-            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.SettingsMenuViewModel" /> class.
+            Initializes the settings.
             </summary>
-            <param name="paletteHelper">The palette helper.</param>
         </member>
         <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
             <summary>

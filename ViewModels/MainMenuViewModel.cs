@@ -14,11 +14,9 @@ namespace MinesweeperML.ViewModels
     /// <seealso cref="BaseViewModel" />
     public class MainMenuViewModel : BaseViewModel
     {
-        private readonly CustomGameViewModel customGameViewModel;
         private readonly GameViewModel gameViewModel;
         private readonly HighscoresViewModel highscoresViewModel;
         private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
-        private readonly MinesweeperViewModel minesweeperViewModel;
         private readonly SelectNewGameViewModel selectNewGameViewModel;
         private readonly SettingsMenuViewModel settingsMenuViewModel;
         private RelayCommand showHighscoresCommand;
@@ -157,6 +155,7 @@ namespace MinesweeperML.ViewModels
 
         private void ShowSettings()
         {
+            this.settingsMenuViewModel.InitializeSettings();
             startWindowViewModel.SelectedViewModel = this.settingsMenuViewModel;
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MaterialDesignThemes.Wpf;
+using MinesweeperML.Business;
 using MinesweeperML.Business.Commands;
 using MinesweeperML.Views;
 
@@ -15,7 +16,6 @@ namespace MinesweeperML.ViewModels
     /// <seealso cref="MinesweeperML.ViewModels.BaseViewModel" />
     public class SettingsMenuViewModel : BaseViewModel
     {
-        private readonly PaletteHelper paletteHelper;
         private RelayCommand goBackCommand;
         private bool isDarkmodeEnabled;
         private MainMenuViewModel mainMenuViewModel;
@@ -54,12 +54,11 @@ namespace MinesweeperML.ViewModels
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsMenuViewModel" /> class.
+        /// Initializes the settings.
         /// </summary>
-        /// <param name="paletteHelper">The palette helper.</param>
-        public SettingsMenuViewModel(PaletteHelper paletteHelper)
+        public void InitializeSettings()
         {
-            this.paletteHelper = paletteHelper;
+            this.IsDarkmodeEnabled = Properties.Settings.Default.IsDarkmode;
         }
 
         /// <summary>
@@ -80,17 +79,14 @@ namespace MinesweeperML.ViewModels
             this.startWindowViewModel = startWindowViewModel;
         }
 
+        private static void ToggleDarkmode(bool isDarkmodeEnabled)
+        {
+            ThemeHandler.ChangeTheme(isDarkmodeEnabled);
+        }
+
         private void GoBack()
         {
             this.startWindowViewModel.SelectedViewModel = mainMenuViewModel;
-        }
-
-        private void ToggleDarkmode(bool isDarkmodeEnabled)
-        {
-            var theme = paletteHelper.GetTheme();
-            var baseTheme = isDarkmodeEnabled ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
-            theme.SetBaseTheme(baseTheme);
-            paletteHelper.SetTheme(theme);
         }
     }
 }
