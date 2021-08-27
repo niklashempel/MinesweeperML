@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="MinesweeperML.Views.SettingsMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MinesweeperML.Views"
+             mc:Ignorable="d"
+    Height="550"
+    Width="500">
+    <Grid
+        Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.ColumnSpan="3"
+                Margin="-20"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                ToolTip="Go back"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                Command="{Binding GoBackCommand}">
+            <materialDesign:PackIcon
+                        Kind="LessThan" />
+        </Button>
+        <TextBlock
+            Grid.ColumnSpan="3"
+            Text="Settings"
+            Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+            TextAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBlock
+            VerticalAlignment="Center"
+            Grid.Row="1"
+            Text="Theme" />
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+            <!--Base Theme-->
+            <Label VerticalAlignment="Top">Light</Label>
+            <ToggleButton IsChecked="{Binding IsDarkmodeEnabled}" />
+            <Label VerticalAlignment="Top">Dark</Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

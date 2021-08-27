@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\nikla\source\repos\MinesweeperML\MinesweeperML.xml</DocumentationFile>
+    <DocumentationFile>MinesweeperML.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\nikla\source\repos\MinesweeperML\MinesweeperML.xml</DocumentationFile>
+    <DocumentationFile>MinesweeperML.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -17,8 +17,9 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <TextBlock
             Grid.ColumnSpan="3"
@@ -46,6 +47,11 @@
                 Height="30"
                 Content="Highscores"
                 Command="{Binding ShowHighscoresCommand}" />
+            <Button
+                Margin="20"
+                Height="30"
+                Content="Settings"
+                Command="{Binding ShowSettingsCommand}" />
         </StackPanel>
     </Grid>
 </UserControl>
