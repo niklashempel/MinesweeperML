@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
-using MaterialDesignThemes.Wpf;
-using MinesweeperML.Models;
-using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.Business.Converter
 {
     /// <summary>
-    /// Bomb counter to number converter.
+    /// Converts a boolean value to visibility with false to hidden visiblity.
     /// </summary>
     /// <seealso cref="System.Windows.Data.IValueConverter" />
-    public class BombCounterToNumberConverter : IValueConverter
+    public class BooleanToHiddenVisibilityConverter : IValueConverter
     {
         /// <summary>
         /// Converts a value.
@@ -28,14 +28,13 @@ namespace MinesweeperML.Business.Converter
         /// </returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var tile = (TileViewModel)value ?? new TileViewModel();
-            if (tile.IsBomb)
+            if (value is bool isVisible)
             {
-                return new PackIcon { Kind = PackIconKind.Bomb };
+                return isVisible ? Visibility.Visible : Visibility.Hidden;
             }
             else
             {
-                return tile.SurroundingBombs.ToString();
+                return Visibility.Hidden;
             }
         }
 
@@ -52,7 +51,14 @@ namespace MinesweeperML.Business.Converter
         /// </returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (value is Visibility visibility)
+            {
+                return visibility == Visibility.Visible;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

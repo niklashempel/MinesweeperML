@@ -13,7 +13,7 @@ using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
 using MinesweeperML.Models;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Highscores view model.
@@ -26,6 +26,7 @@ namespace MinesweeperML.ViewsModel
         private readonly MinesweeperDbContextFactory minesweeperDbContextFactory;
         private int currentPage = 1;
         private RelayCommand goBackCommand;
+        private MainMenuViewModel mainWindowViewModel;
         private int maxPage;
         private RelayCommand<DataGridSortingEventArgs> sortingCommand;
 
@@ -80,12 +81,6 @@ namespace MinesweeperML.ViewsModel
         /// </summary>
         /// <value>The highscores view source.</value>
         public CollectionViewSource HighscoresViewSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the main window view model.
-        /// </summary>
-        /// <value>The main window view model.</value>
-        public MainMenuViewModel MainWindowViewModel { get; set; }
 
         /// <summary>
         /// Gets or sets the maximum page.
@@ -156,6 +151,15 @@ namespace MinesweeperML.ViewsModel
             HighscoresViewSource = new CollectionViewSource();
         }
 
+        /// <summary>
+        /// Sets the main menu view model.
+        /// </summary>
+        /// <param name="mainMenuViewModel">The main menu view model.</param>
+        public void SetMainMenuViewModel(MainMenuViewModel mainMenuViewModel)
+        {
+            this.mainWindowViewModel = mainMenuViewModel;
+        }
+
         private void ApplyPaging()
         {
             using (var db = minesweeperDbContextFactory.CreateDbContext())
@@ -202,7 +206,7 @@ namespace MinesweeperML.ViewsModel
 
         private void GoBack()
         {
-            MainWindowViewModel.StartWindowViewModel.SelectedViewModel = MainWindowViewModel;
+            mainWindowViewModel.StartWindowViewModel.SelectedViewModel = mainWindowViewModel;
         }
 
         private void SkipToFirstPage()

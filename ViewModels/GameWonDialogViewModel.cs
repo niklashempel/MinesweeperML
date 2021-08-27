@@ -1,4 +1,4 @@
-﻿namespace MinesweeperML.ViewsModel
+﻿namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Game won dialog view model.

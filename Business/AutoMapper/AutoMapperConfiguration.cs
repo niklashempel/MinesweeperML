@@ -18,6 +18,7 @@ namespace MinesweeperML.Business.AutoMapper
             {
                 // configure here
                 cfg.AddProfile<HighscoreProfile>();
+                cfg.AddProfile<TrainingDataProfile>();
             });
             return config.CreateMapper();
         }

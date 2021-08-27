@@ -1,6 +1,6 @@
 ﻿using MinesweeperML.Business.Database.DbContexts;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Start window view model.

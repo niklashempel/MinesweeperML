@@ -1,4 +1,4 @@
-﻿namespace MinesweeperML.ViewsModel
+﻿namespace MinesweeperML.ViewModels
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;

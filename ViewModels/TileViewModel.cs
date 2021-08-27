@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// The view model representing a tile on the game board.
     /// </summary>
-    /// <seealso cref="MinesweeperML.ViewsModel.BaseViewModel" />
+    /// <seealso cref="MinesweeperML.ViewModels.BaseViewModel" />
     public class TileViewModel : BaseViewModel
     {
         private bool isBomb;

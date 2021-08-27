@@ -4,8 +4,9 @@ using MinesweeperML.Business.Commands;
 using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
 using System;
+using MinesweeperML.ViewModels;
 
-namespace MinesweeperML.ViewsModel
+namespace MinesweeperML.ViewModels
 {
     /// <summary>
     /// Main menu view model.
@@ -15,17 +16,40 @@ namespace MinesweeperML.ViewsModel
     {
         private readonly PaletteHelper _paletteHelper = new PaletteHelper();
         private readonly CustomGameViewModel customGameViewModel;
-
+        private readonly GameViewModel gameViewModel;
         private readonly HighscoresViewModel highscoresViewModel;
-
+        private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
+        private readonly SelectNewGameViewModel selectNewGameViewModel;
+        private RelayCommand showHighscoresCommand;
+        private RelayCommand showMachineLearningMenuCommand;
+        private RelayCommand startNewGameCommand;
         private readonly MinesweeperViewModel minesweeperViewModel;
         private bool _toogleDarkmode;
-
+        private StartWindowViewModel startWindowViewModel;
+        
         /// <summary>
         /// Gets the show highscores command.
         /// </summary>
         /// <value>The show highscores command.</value>
-        public RelayCommand ShowHighscoresCommand { get; private set; }
+        public RelayCommand ShowHighscoresCommand
+        {
+            get
+            {
+                return showHighscoresCommand ??= new RelayCommand(param => this.ShowHighscores());
+            }
+        }
+
+        /// <summary>
+        /// Gets the show machine learning menu command.
+        /// </summary>
+        /// <value>The show machine learning menu command.</value>
+        public RelayCommand ShowMachineLearningMenuCommand
+        {
+            get
+            {
+                return showMachineLearningMenuCommand ??= new RelayCommand(param => this.ShowMachineLearningMenu());
+            }
+        }
 
         /// <summary>
         /// Gets the start customer game command.
@@ -52,10 +76,37 @@ namespace MinesweeperML.ViewsModel
         public RelayCommand StartMediumGameCommand { get; private set; }
 
         /// <summary>
+        /// Gets the start new game command.
+        /// </summary>
+        /// <value>The start new game command.</value>
+        public RelayCommand StartNewGameCommand
+        {
+            get
+            {
+                return startNewGameCommand ??= new RelayCommand(param => this.StartNewGame());
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the start window view model.
         /// </summary>
-        /// <value>The start window view model.</value>
-        public StartWindowViewModel StartWindowViewModel { get; set; }
+        /// <returns>The start window view model.</returns>
+        public StartWindowViewModel StartWindowViewModel
+        {
+            get
+            {
+                return startWindowViewModel;
+            }
+            set
+            {
+                if (startWindowViewModel != value)
+                {
+                    startWindowViewModel = value;
+                    this.machineLearningMenuViewModel.SetStartWindowViewModel(value, this.gameViewModel);
+                    this.selectNewGameViewModel.SetStartWindowViewModel(StartWindowViewModel);
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether [toogle darkmode].
@@ -83,54 +134,36 @@ namespace MinesweeperML.ViewsModel
         /// Initializes a new instance of the <see cref="MainMenuViewModel" /> class.
         /// </summary>
         /// <param name="highscoresViewModel">The highscores view model.</param>
-        /// <param name="customGameViewModel">The custom game view model.</param>
-        /// <param name="minesweeperViewModel">The minesweeper view model.</param>
-        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, CustomGameViewModel customGameViewModel, MinesweeperViewModel minesweeperViewModel)
+        /// <param name="selectNewGameViewModel">The select new game view model.</param>
+        /// <param name="machineLearningMenuViewModel">
+        /// The machine learning menu view model.
+        /// </param>
+        /// <param name="gameViewModel">The game view model.</param>
+        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel, GameViewModel gameViewModel)
         {
-            StartEasyGameCommand = new RelayCommand(param => this.StartEasyGame());
-            StartMediumGameCommand = new RelayCommand(param => this.StartMediumGame());
-            StartHardGameCommand = new RelayCommand(param => this.StartHardGame());
-            StartCustomGameCommand = new RelayCommand(param => this.StartCustomGame());
-            ShowHighscoresCommand = new RelayCommand(param => this.ShowHighscores());
+            this.gameViewModel = gameViewModel;
             this.highscoresViewModel = highscoresViewModel;
-            this.customGameViewModel = customGameViewModel;
-            this.minesweeperViewModel = minesweeperViewModel;
-            customGameViewModel.MinesweeperViewModel = minesweeperViewModel;
+            this.highscoresViewModel.SetMainMenuViewModel(this);
+            this.selectNewGameViewModel = selectNewGameViewModel;
+            this.selectNewGameViewModel.SetMainMenuViewModel(this);
+            this.machineLearningMenuViewModel = machineLearningMenuViewModel;
+            this.machineLearningMenuViewModel.SetMainMenuViewModel(this);
         }
 
         private void ShowHighscores()
         {
-            StartWindowViewModel.SelectedViewModel = this.highscoresViewModel;
-            this.highscoresViewModel.MainWindowViewModel = this;
+            startWindowViewModel.SelectedViewModel = this.highscoresViewModel;
             this.highscoresViewModel.SkipToFirstPageCommand.Execute(null);
         }
 
-        private void StartCustomGame()
+        private void ShowMachineLearningMenu()
         {
-            this.customGameViewModel.MainMenuViewModel = this;
-            StartWindowViewModel.SelectedViewModel = this.customGameViewModel;
+            startWindowViewModel.SelectedViewModel = this.machineLearningMenuViewModel;
         }
 
-        private void StartEasyGame()
+        private void StartNewGame()
         {
-            StartGame(10, 8, 7, Difficulty.Easy);
-        }
-
-        private void StartGame(int columns, int rows, int numberOfBombs, Difficulty difficulty)
-        {
-            this.minesweeperViewModel.MainMenuViewModel = this;
-            this.minesweeperViewModel.StartGame(columns, rows, numberOfBombs, difficulty);
-            StartWindowViewModel.SelectedViewModel = minesweeperViewModel;
-        }
-
-        private void StartHardGame()
-        {
-            StartGame(20, 15, 70, Difficulty.Hard);
-        }
-
-        private void StartMediumGame()
-        {
-            StartGame(15, 10, 30, Difficulty.Medium);
+            startWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Data;
 using System.Windows.Media;
 using MinesweeperML.Models;
-using MinesweeperML.ViewsModel;
+using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.Business.Converter
 {

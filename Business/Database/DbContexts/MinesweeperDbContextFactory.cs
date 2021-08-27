@@ -23,7 +23,7 @@ namespace MinesweeperML.Business.Database.DbContexts
         /// Creates a new instance of a derived context.
         /// </summary>
         /// <param name="args">Arguments provided by the design-time service.</param>
-        /// <returns>An instance of <typeparamref name="MinesweeperDbContext" />.</returns>
+        /// <returns>An instance of <see cref="MinesweeperDbContext" />.</returns>
         public MinesweeperDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MinesweeperDbContext>();

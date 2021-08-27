@@ -3,9 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MinesweeperML.Views"
+        xmlns:viewmodels="clr-namespace:MinesweeperML.ViewModels"
         xmlns:views="clr-namespace:MinesweeperML.Views"
-        xmlns:viewmodels="clr-namespace:MinesweeperML.ViewsModel"
+        xmlns:local="clr-namespace:MinesweeperML.Views"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}" Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
         Title="Minesweeper"
@@ -25,6 +25,12 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:HighscoresViewModel}">
             <views:HighscoresView DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SelectNewGameViewModel}">
+            <views:SelectNewGame DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MachineLearningMenuViewModel}">
+            <views:MachineLearningMenu DataContext="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
