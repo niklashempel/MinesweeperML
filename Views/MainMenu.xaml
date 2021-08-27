@@ -21,6 +21,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
+        <TextBlock
+            Grid.ColumnSpan="3"
+            Text="Minesweeper"
+            TextAlignment="Center"
+            FontSize="50"
+            VerticalAlignment="Center"
+            TextDecorations="Underline" />
         <StackPanel Grid.Row="0"
                     Grid.Column="2"
                     HorizontalAlignment="Right"
@@ -28,16 +35,9 @@
                     Margin="10">
             <!--Base Theme-->
             <Label VerticalAlignment="Top">LIGHT</Label>
-            <ToggleButton IsChecked="{Binding ToogleDarkmode}" />
+            <ToggleButton IsChecked="{Binding IsDarkmodeEnabled}" />
             <Label VerticalAlignment="Top">DARK</Label>
         </StackPanel>
-         <TextBlock
-            Grid.ColumnSpan="3"
-            Text="Minesweeper"
-            TextAlignment="Center"
-            FontSize="50"
-            VerticalAlignment="Center"
-            TextDecorations="Underline" />
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"

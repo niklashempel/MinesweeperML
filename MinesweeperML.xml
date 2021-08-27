@@ -1487,6 +1487,14 @@
             </summary>
             <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.IsDarkmodeEnabled">
+            <summary>
+            Gets or sets a value indicating whether this instance is darkmode enabled.
+            </summary>
+            <value>
+            <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowHighscoresCommand">
             <summary>
             Gets the show highscores command.
@@ -1534,12 +1542,6 @@
             Gets or sets the start window view model.
             </summary>
             <returns>The start window view model.</returns>
-        </member>
-        <member name="P:MinesweeperML.ViewsModel.MainMenuViewModel.ToogleDarkmode">
-            <summary>
-            Gets or sets a value indicating whether [toogle darkmode].
-            </summary>
-            <value><c>true</c> if [toogle darkmode]; otherwise, <c>false</c>.</value>
         </member>
         <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel,MinesweeperML.ViewModels.GameViewModel)">
             <summary>
@@ -2034,36 +2036,6 @@
         <member name="M:MinesweeperML.Views.StartWindow.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>

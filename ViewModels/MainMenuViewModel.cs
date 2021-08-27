@@ -1,9 +1,9 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 using Microsoft.EntityFrameworkCore;
 using MinesweeperML.Business.Commands;
 using MinesweeperML.Business.Database.DbContexts;
 using MinesweeperML.Enumerations;
-using System;
 using MinesweeperML.ViewModels;
 
 namespace MinesweeperML.ViewModels
@@ -14,19 +14,39 @@ namespace MinesweeperML.ViewModels
     /// <seealso cref="BaseViewModel" />
     public class MainMenuViewModel : BaseViewModel
     {
-        private readonly PaletteHelper _paletteHelper = new PaletteHelper();
         private readonly CustomGameViewModel customGameViewModel;
         private readonly GameViewModel gameViewModel;
         private readonly HighscoresViewModel highscoresViewModel;
         private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
+        private readonly MinesweeperViewModel minesweeperViewModel;
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
         private readonly SelectNewGameViewModel selectNewGameViewModel;
+        private bool isDarkmodeEnabled;
         private RelayCommand showHighscoresCommand;
         private RelayCommand showMachineLearningMenuCommand;
         private RelayCommand startNewGameCommand;
-        private readonly MinesweeperViewModel minesweeperViewModel;
-        private bool _toogleDarkmode;
         private StartWindowViewModel startWindowViewModel;
-        
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is darkmode enabled.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsDarkmodeEnabled
+        {
+            get => isDarkmodeEnabled;
+            set
+            {
+                if (value != isDarkmodeEnabled)
+                {
+                    isDarkmodeEnabled = value;
+                    NotifyPropertyChanged(nameof(isDarkmodeEnabled));
+                    ToggleDarkmode(isDarkmodeEnabled);
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the show highscores command.
         /// </summary>
@@ -109,28 +129,6 @@ namespace MinesweeperML.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether [toogle darkmode].
-        /// </summary>
-        /// <value><c>true</c> if [toogle darkmode]; otherwise, <c>false</c>.</value>
-        public bool ToogleDarkmode
-        {
-            get => _toogleDarkmode;
-            set
-            {
-                if (value != _toogleDarkmode)
-                {
-                    _toogleDarkmode = value;
-                    NotifyPropertyChanged(nameof(_toogleDarkmode));
-
-                    ITheme theme = _paletteHelper.GetTheme();
-                    IBaseTheme baseTheme = _toogleDarkmode ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
-                    theme.SetBaseTheme(baseTheme);
-                    _paletteHelper.SetTheme(theme);
-                }
-            }
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="MainMenuViewModel" /> class.
         /// </summary>
         /// <param name="highscoresViewModel">The highscores view model.</param>
@@ -164,6 +162,14 @@ namespace MinesweeperML.ViewModels
         private void StartNewGame()
         {
             startWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
+        }
+
+        private void ToggleDarkmode(bool isDarkmodeEnabled)
+        {
+            var theme = paletteHelper.GetTheme();
+            var baseTheme = isDarkmodeEnabled ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
+            theme.SetBaseTheme(baseTheme);
+            paletteHelper.SetTheme(theme);
         }
     }
 }
