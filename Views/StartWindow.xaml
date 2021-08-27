@@ -30,7 +30,10 @@
             <views:SelectNewGame DataContext="{Binding}" />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:MachineLearningMenuViewModel}">
-            <views:MachineLearningMenu DataContext="{Binding}"/>
+            <views:MachineLearningMenu DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SettingsMenuViewModel}">
+            <views:SettingsMenu DataContext="{Binding}" />
         </DataTemplate>
     </Window.Resources>
     <Grid>

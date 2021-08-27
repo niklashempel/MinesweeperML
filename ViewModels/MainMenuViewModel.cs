@@ -19,33 +19,13 @@ namespace MinesweeperML.ViewModels
         private readonly HighscoresViewModel highscoresViewModel;
         private readonly MachineLearningMenuViewModel machineLearningMenuViewModel;
         private readonly MinesweeperViewModel minesweeperViewModel;
-        private readonly PaletteHelper paletteHelper = new PaletteHelper();
         private readonly SelectNewGameViewModel selectNewGameViewModel;
-        private bool isDarkmodeEnabled;
+        private readonly SettingsMenuViewModel settingsMenuViewModel;
         private RelayCommand showHighscoresCommand;
         private RelayCommand showMachineLearningMenuCommand;
+        private RelayCommand showSettingsCommand;
         private RelayCommand startNewGameCommand;
         private StartWindowViewModel startWindowViewModel;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is darkmode enabled.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsDarkmodeEnabled
-        {
-            get => isDarkmodeEnabled;
-            set
-            {
-                if (value != isDarkmodeEnabled)
-                {
-                    isDarkmodeEnabled = value;
-                    NotifyPropertyChanged(nameof(isDarkmodeEnabled));
-                    ToggleDarkmode(isDarkmodeEnabled);
-                }
-            }
-        }
 
         /// <summary>
         /// Gets the show highscores command.
@@ -68,6 +48,18 @@ namespace MinesweeperML.ViewModels
             get
             {
                 return showMachineLearningMenuCommand ??= new RelayCommand(param => this.ShowMachineLearningMenu());
+            }
+        }
+
+        /// <summary>
+        /// Gets the show settings command.
+        /// </summary>
+        /// <value>The show settings command.</value>
+        public RelayCommand ShowSettingsCommand
+        {
+            get
+            {
+                return showSettingsCommand ??= new RelayCommand(param => this.ShowSettings());
             }
         }
 
@@ -110,7 +102,7 @@ namespace MinesweeperML.ViewModels
         /// <summary>
         /// Gets or sets the start window view model.
         /// </summary>
-        /// <returns>The start window view model.</returns>
+        /// <value>The start window view model.</value>
         public StartWindowViewModel StartWindowViewModel
         {
             get
@@ -123,7 +115,8 @@ namespace MinesweeperML.ViewModels
                 {
                     startWindowViewModel = value;
                     this.machineLearningMenuViewModel.SetStartWindowViewModel(value, this.gameViewModel);
-                    this.selectNewGameViewModel.SetStartWindowViewModel(StartWindowViewModel);
+                    this.selectNewGameViewModel.SetStartWindowViewModel(value);
+                    this.settingsMenuViewModel.SetStartWindowViewModel(value);
                 }
             }
         }
@@ -137,9 +130,12 @@ namespace MinesweeperML.ViewModels
         /// The machine learning menu view model.
         /// </param>
         /// <param name="gameViewModel">The game view model.</param>
-        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel, GameViewModel gameViewModel)
+        /// <param name="settingsMenuViewModel">The settings menu view model.</param>
+        public MainMenuViewModel(HighscoresViewModel highscoresViewModel, SelectNewGameViewModel selectNewGameViewModel, MachineLearningMenuViewModel machineLearningMenuViewModel, GameViewModel gameViewModel, SettingsMenuViewModel settingsMenuViewModel)
         {
             this.gameViewModel = gameViewModel;
+            this.settingsMenuViewModel = settingsMenuViewModel;
+            this.settingsMenuViewModel.SetMainMenuViewModel(this);
             this.highscoresViewModel = highscoresViewModel;
             this.highscoresViewModel.SetMainMenuViewModel(this);
             this.selectNewGameViewModel = selectNewGameViewModel;
@@ -159,17 +155,14 @@ namespace MinesweeperML.ViewModels
             startWindowViewModel.SelectedViewModel = this.machineLearningMenuViewModel;
         }
 
+        private void ShowSettings()
+        {
+            startWindowViewModel.SelectedViewModel = this.settingsMenuViewModel;
+        }
+
         private void StartNewGame()
         {
             startWindowViewModel.SelectedViewModel = this.selectNewGameViewModel;
-        }
-
-        private void ToggleDarkmode(bool isDarkmodeEnabled)
-        {
-            var theme = paletteHelper.GetTheme();
-            var baseTheme = isDarkmodeEnabled ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
-            theme.SetBaseTheme(baseTheme);
-            paletteHelper.SetTheme(theme);
         }
     }
 }

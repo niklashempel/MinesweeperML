@@ -19,7 +19,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <TextBlock
             Grid.ColumnSpan="3"
@@ -28,16 +28,6 @@
             FontSize="50"
             VerticalAlignment="Center"
             TextDecorations="Underline" />
-        <StackPanel Grid.Row="0"
-                    Grid.Column="2"
-                    HorizontalAlignment="Right"
-                    Orientation="Horizontal"
-                    Margin="10">
-            <!--Base Theme-->
-            <Label VerticalAlignment="Top">LIGHT</Label>
-            <ToggleButton IsChecked="{Binding IsDarkmodeEnabled}" />
-            <Label VerticalAlignment="Top">DARK</Label>
-        </StackPanel>
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -57,6 +47,11 @@
                 Height="30"
                 Content="Highscores"
                 Command="{Binding ShowHighscoresCommand}" />
+            <Button
+                Margin="20"
+                Height="30"
+                Content="Settings"
+                Command="{Binding ShowSettingsCommand}" />
         </StackPanel>
     </Grid>
 </UserControl>

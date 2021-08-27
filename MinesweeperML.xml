@@ -1487,14 +1487,6 @@
             </summary>
             <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
         </member>
-        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.IsDarkmodeEnabled">
-            <summary>
-            Gets or sets a value indicating whether this instance is darkmode enabled.
-            </summary>
-            <value>
-            <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
-            </value>
-        </member>
         <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowHighscoresCommand">
             <summary>
             Gets the show highscores command.
@@ -1506,6 +1498,12 @@
             Gets the show machine learning menu command.
             </summary>
             <value>The show machine learning menu command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.ShowSettingsCommand">
+            <summary>
+            Gets the show settings command.
+            </summary>
+            <value>The show settings command.</value>
         </member>
         <member name="P:MinesweeperML.ViewModels.MainMenuViewModel.StartCustomGameCommand">
             <summary>
@@ -1541,9 +1539,9 @@
             <summary>
             Gets or sets the start window view model.
             </summary>
-            <returns>The start window view model.</returns>
+            <value>The start window view model.</value>
         </member>
-        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel,MinesweeperML.ViewModels.GameViewModel)">
+        <member name="M:MinesweeperML.ViewModels.MainMenuViewModel.#ctor(MinesweeperML.ViewModels.HighscoresViewModel,MinesweeperML.ViewModels.SelectNewGameViewModel,MinesweeperML.ViewModels.MachineLearningMenuViewModel,MinesweeperML.ViewModels.GameViewModel,MinesweeperML.ViewModels.SettingsMenuViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.MainMenuViewModel" /> class.
             </summary>
@@ -1553,6 +1551,7 @@
             The machine learning menu view model.
             </param>
             <param name="gameViewModel">The game view model.</param>
+            <param name="settingsMenuViewModel">The settings menu view model.</param>
         </member>
         <member name="T:MinesweeperML.ViewModels.MinesweeperViewModel">
             <summary>
@@ -1676,6 +1675,44 @@
             <param name="mainMenuViewModel">The main menu view model.</param>
         </member>
         <member name="M:MinesweeperML.ViewModels.SelectNewGameViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel)">
+            <summary>
+            Sets the start window view model.
+            </summary>
+            <param name="startWindowViewModel">The start window view model.</param>
+        </member>
+        <member name="T:MinesweeperML.ViewModels.SettingsMenuViewModel">
+            <summary>
+            ViewModel that shall be used as <see cref="T:MinesweeperML.Views.SettingsMenu" />'s DataContext.
+            </summary>
+            <seealso cref="T:MinesweeperML.ViewModels.BaseViewModel" />
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SettingsMenuViewModel.GoBackCommand">
+            <summary>
+            Gets the go back command.
+            </summary>
+            <value>The go back command.</value>
+        </member>
+        <member name="P:MinesweeperML.ViewModels.SettingsMenuViewModel.IsDarkmodeEnabled">
+            <summary>
+            Gets or sets a value indicating whether this instance is darkmode enabled.
+            </summary>
+            <value>
+            <c>true</c> if this instance is darkmode enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.#ctor(MaterialDesignThemes.Wpf.PaletteHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MinesweeperML.ViewModels.SettingsMenuViewModel" /> class.
+            </summary>
+            <param name="paletteHelper">The palette helper.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.SetMainMenuViewModel(MinesweeperML.ViewModels.MainMenuViewModel)">
+            <summary>
+            Sets the main menu view model.
+            </summary>
+            <param name="mainMenuViewModel">The main menu view model.</param>
+        </member>
+        <member name="M:MinesweeperML.ViewModels.SettingsMenuViewModel.SetStartWindowViewModel(MinesweeperML.ViewModels.StartWindowViewModel)">
             <summary>
             Sets the start window view model.
             </summary>
@@ -2020,6 +2057,19 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:MinesweeperML.Views.SettingsMenu">
+            <summary>
+            Interaction logic for SettingsMenu.xaml
+            </summary>
+            <summary>
+            SettingsMenu
+            </summary>
+        </member>
+        <member name="M:MinesweeperML.Views.SettingsMenu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:MinesweeperML.Views.StartWindow">
             <summary>
             Interaction logic for StartWindow.xaml.
@@ -2036,6 +2086,36 @@
         <member name="M:MinesweeperML.Views.StartWindow.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>
